@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>報告書閲覧システム</title>
+    <%= javascript_include_tag "application" %>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <style>
+      body { padding-top: 60px; }/* 60px to make the container go all the way to the bottom of the topbar */
+
+    </style>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap-responsive.css">
+	<link rel="stylesheet" type="text/css" href="/pagenate.css">
+	<script type="text/javascript" src="/bootstrap/js/bootstrap.js"></script>
+	<%= csrf_meta_tags %>
+	<%= yield :head %>
+  </head>
+  
+  <body style="background-color:#add8e6"></body>
+  
+  <div class="navbar navbar-fixed-top navbar-inverse">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+	<a class="brand" href="/" style="background-color:transparent;">試験報告書閲覧システム</a>
+	<ul class="nav">
+          <li><a href="/emps">就職</a></li>
+          <li><a href="/unis">進学</a></li>
+          <li><a href="/search">検索</a></li>
+	</ul>
+	<ul class="nav pull-right">
+          <% if ! session[:usr] %>
+	  <li><a href="/accounts/new">アカウント作成</a></li>
+	  <!-- <li class="divider-vertical"></li> -->
+          <li><a href="/login">ログイン</a></li>
+          <% else %>
+          <li><a href="/accounts/mypage">マイページ</a></li>
+          <!-- <li class="divider-vertical"></li> -->
+          <li><a href="/login/logout">ログアウト</a></li>
+          <% end %>
+	</ul>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container">
+    <%= yield :extend %>
+	
+    <div class="row-fluid">
+      <div class="span12">
+	<%= yield %>
+	<%= yield :scripts %>
+      </div>
+    </div>
+    
+    <footer></footer>
+  </div>
+</html>

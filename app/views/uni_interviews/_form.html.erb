@@ -1,0 +1,47 @@
+<%= javascript_include_tag "my" %>
+<%= form_for(@uni_interview,:url=>@form_to,:html => {:class => "form-horizontal"}) do |f| %>
+  <% if @uni_interview.errors.any? %>
+    <div id="error_explanation">
+      <h2>以下の項目を修正してください。</h2>
+
+      <ul>
+      <% @uni_interview.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :candidates, '面接官の人数', {:class => "control-label"}%>
+    <div class="controls">
+      <%= f.number_field :candidates, :style => "width: 35px"; %>（人）
+      <p class="help-block">半角数字、0以上</p>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :examiners, '一緒に面接を受けた人数（集団面接の場合）', {:class => "control-label"} %>
+    <div class="controls">
+      <%= f.number_field :examiners, :style => "width: 35px"; %>（人）
+      <p class="help-block">半角数字、0以上</p>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :time, '面接時間', {:class => "control-label"}%>
+    <div class="controls">
+      <%= f.number_field :time, :step => 5, :style => "width: 40px"; %>（分）
+      <p class="help-block">半角数字、0以上</p>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :deatails, '面接の詳細な内容', {:class => "control-label"} %>
+    <div class="controls">
+      <%= f.text_area :deatails, {:class=>"span5",:rows=>8} %>
+    </div>
+  </div>
+
+  <div class="form-actions" style="background-color: transparent;">
+	<%= link_to_function '戻る', 'history.back()', :class => 'btn' %>
+    <%= f.submit '次へ', :class=>"btn btn-primary" %>
+  </div>
+<% end %>

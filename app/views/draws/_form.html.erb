@@ -1,0 +1,65 @@
+<%= form_for(@draw, :url=>@form_to) do |f| %>
+  <% if @draw.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@draw.errors.count, "error") %> prohibited this draw from being saved:</h2>
+
+      <ul>
+      <% @draw.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <h4>ボタン</h4>
+  <div id = "interviewer" class = "btn">面接官</div>
+  <div id = "me" class = "btn">私</div>
+  <div id = "other" class = "btn">他の受験者</div>
+  <div id = "table" class = "btn">机</div>
+  <div id = "whiteboard" class = "btn">ホワイトボード</div>
+  <div id = "door" class = "btn">ドア</div>
+  <div id = "addtext" class = "btn">メモ</div>
+  <div id = "clear-button" class = "btn btn-danger">クリア</div>
+  
+  <br /><br />
+
+  <div id = "jquery-ui-draggable-wrap" class = "ui-widget-content">
+	<% if !@draw.txt.nil? %>
+      <% strary = @uni.draw.txt.split(/&&/) %>
+	  <% padding = 0 %>
+	  <% (0..strary.size - 1).step(4) do |idx| %>
+	    <% p_left = strary[idx + 2].to_i * 25 %>
+	    <% if (strary[idx + 3] == "nil") %>
+	      <% p_top = strary[idx + 1].to_i * 25 - padding %>
+		  <% padding += 50 %>
+	      <% if strary[idx] == "me" %>
+ 		    <div class="object_me" style="position:relative; top:<%= p_top %>px; left:<%= p_left %>px; width:50px">
+	          <img src="/assets/me.png">
+	        </div>
+		  <% elsif strary[idx] == "iv" %>
+ 		    <div class="object_interviewer" style="position:relative; top:<%= p_top %>px; left:<%= p_left %>px; width:50px">
+	          <img src="/assets/interviewer.png">
+	        </div>
+		  <% elsif strary[idx] == "ot" %>
+ 		    <div class="object_other" style="position:relative; top:<%= p_top %>px; left:<%= p_left %>px; width:50px">
+	          <img src="/assets/other.png">
+	        </div>
+		  <% end %>
+	    <% else %>
+	      <% p_top = strary[idx + 1].to_i * 25 - padding %>
+		  <% padding += 18 %>
+	      <div class="object_sticky" style="width:160px; position:relative; top:<%= p_top %>px; left:<%= p_left %>px;"><%= strary[idx + 3] %></div>
+	    <% end %>
+	  <% end %>
+    <% end %>
+  </div>
+
+
+
+  <div class="form-actions" style="background-color: transparent;">
+	<%= link_to_function '戻る', 'history.back()', :class => 'btn' %>
+	<%= f.hidden_field :txt %>
+	<%= f.submit '次へ', :class => "btn btn-primary" %>
+</div>
+</div>
+<% end %>

@@ -1,0 +1,127 @@
+<%= javascript_include_tag "my" %>
+
+<%= form_for(@uni, :html => {:class => "form-horizontal"}) do |f| %>
+  <% if @uni.errors.any? %>
+    <div id="error_explanation">
+      <h2>基本情報に関して、以下の項目を修正してください</h2>
+
+      <ul>
+      <% @uni.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <% if @uni.uni_submission.errors.any? %>
+    <div id="error_explanation">
+      <h2>提出書類に関して、以下の項目を修正してください</h2>
+
+      <ul>
+      <% @uni.uni_submission.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= field_set_tag '基本情報' do %>
+  <p>基本的な情報を入力してください。</p>
+    <div class="control-group">
+      <%= f.label :name,'大学名',{:class => "control-label"} %>
+      <div class="controls">
+        <%= f.text_field :name,{:class => "span3"} %>
+        <p class="help-block">※必須</p>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :major,'学部学科',{:class => "control-label"} %>
+      <div class="controls">
+        <%= f.text_field :major,{:class => "span3"} %>
+        <p class="help-block">※必須</p>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :location,'所在地',{:class => "control-label"} %>
+      <div class="controls">
+        <%= f.text_field :location,{:class => "span3"} %>
+        <p class="help-block">※必須</p>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :glouping,'試験方法',{:class => "control-label"} %>
+      <div class="controls">
+        <%= f.select( :glouping, {'推薦' => true, '学力' => false},{},{:class => "span2"})%>
+      </div>
+    </div>
+
+    <%= fields_for @uni.uni_exam do |ue|%>
+      <div class="control-group">
+        <%= ue.label :start, '試験期間',{:class => "control-label"} %>
+        <div class="controls">
+          <%= ue.date_select :start, {:use_month_numbers => true}, :style => "width: 70px"; %> ～ <%= ue.date_select :end, {:use_month_numbers => true}, :style => "width: 70px"; %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+  <%= field_set_tag '提出書類について' do %>
+  <p>提出した書類にチェックしてください。チェックボックスにない場合、その他の欄に入力してください。</p>
+  <br />
+  
+    <%= fields_for @uni.uni_app do |ua|%>
+      <div class="control-group">
+        <%= ua.label :start, '願書提出期間',{:class => "control-label"} %>
+        <div class="controls">
+          <%= ua.date_select :start, {:use_month_numbers => true},  :style => "width: 70px"; %> ～ <%= ua.date_select :end, {:use_month_numbers => true},  :style => "width: 70px"; %>
+        </div>
+      </div>
+    <% end %>
+
+    <%= fields_for @uni.uni_submission do |us|%>
+        <div class="control-group">
+		  <%= us.label :start, '提出書類', {:class => "control-label"} %>
+            <div class="controls">
+              <label class="checkbox inline" style="width:80px"><%= us.check_box :result %>成績証明書</label>
+              <label class="checkbox inline" style="width:50px"><%= us.check_box :survey %>調査書</label>
+              <label class="checkbox inline" style="width:50px"><%= us.check_box :recommendation %>推薦書</label>
+              <label class="checkbox inline" style="width:80px"><%= us.check_box :reason %>志望理由書</label>
+            </div>
+        </div>
+        <div class="control-group">
+            <%= us.label :reason_details, '志望理由書の内容',{:class => "control-label"} %>
+            <div class="controls">
+              <%= us.text_area :reason_details, {:class=>"span4",:rows=>8} %>
+              <p class="help-block">※志望理由書を提出した方のみ入力してください。</p>
+            </div>
+        </div>        
+        <div class="control-group">
+            <%= us.label :other, 'その他の提出物',{:class => "control-label"} %>
+            <div class="controls">
+              <%= us.text_field :other, {:class => "span3"} %>
+            </div>
+        </div>
+    <% end %>
+  <% end %>
+  
+  <%= field_set_tag '試験結果' do %>
+    <%= fields_for @uni.uni_result do |result|%>
+    <div class="control-group">
+        <%= result.label :day, '結果発表日', {:class => "control-label"} %>
+        <div class="controls">
+          <%= result.date_select :day, {:use_month_numbers => true},  :style => "width: 70px"; %>
+        </div>
+    </div>
+    <div class="control-group">
+        <%= result.label :result,'結果', {:class => "control-label"} %>
+        <div class="controls">
+          <%= result.select( :result, {'合格' => true, '不合格' => false},{}, {:class=>"span2"})%>
+        </div>
+    </div>
+    <% end %>
+  <% end %>
+
+  <div class="form-actions" style="background-color: transparent;">
+    <%= f.submit '次へ', :class => "btn btn-primary"%>
+  </div>
+
+<% end %>

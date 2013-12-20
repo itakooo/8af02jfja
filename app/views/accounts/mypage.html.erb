@@ -1,0 +1,102 @@
+<div class="well">
+<div class="row-fluid">
+  <div class="span6">
+	   <h2><%= @account.name %> さん (<%= @account.student_id %>) のマイページ</h2>
+  </div>
+  <div class="span6" align="right">
+	<br />
+	<%= link_to 'アカウント情報編集', edit_account_path(@account), :class=>'btn' %>
+  </div>
+</div>
+<hr>
+
+<div class="row-fluid">
+  <div class="span6">
+	<h3>作成した就職試験報告書</h3>
+  </div>
+  <div class="span6" align="right">
+	<br />
+	<%= link_to '就職試験報告書の新規作成', new_emp_path, :class => 'btn btn-info' %></h3>
+  </div>
+</div>
+
+<% if @emps.blank? %>
+  まだ作成していません。
+<% else %>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>報告者</th>
+        <th>会社名</th>
+        <th>選考</th>
+        <th>作成日</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+  <% @emps.each do |emp| %>
+    <tbody>
+    <tr>
+      <td><%= emp.account.student_id %></td>
+      <td><%= link_to emp.name, emp, :style=>"background-color: transparent;" %></td>
+      <td><% emp.emp_selections.each do |selection| %>
+          <%= selection.glouping %>次
+      <% end %></td>
+      <td><%= emp.created_at.strftime("%Y年%m月%d日") %>
+      <% if emp.account.id == session[:usr] %>
+          <td style="text-align:center;", width="35"><%= link_to '編集', edit_emp_path(emp), :style=>"background-color: transparent;" %></td>
+          <td style="text-align:center;", width="35"><%= link_to '消去', emp, method: :delete, :style=>"background-color: transparent;" %></td>
+      <% end %>
+    </tr>
+    </tbody>
+  <% end %>
+  </table>
+
+  <div style="text-align:center">
+    <%= paginate @emps %>
+  </div>
+<% end %>
+
+<hr>
+
+<div class="row-fluid">
+  <div class="span6">
+	<h3>作成した進学試験報告書</h3>
+  </div>
+  <div class="span6" align="right">
+	<br />
+	<%= link_to '進学試験報告書の新規作成', new_uni_path, :class => 'btn btn-success' %>
+  </div>
+</div>
+
+<% if @unis.blank? %>
+  まだ作成していません。
+<% else %>
+  <table class="table table-bordered">
+    <tr>
+      <th>報告者</th>
+      <th>大学名</th>
+      <th>学科</th>
+      <th>作成日</th>
+      <th></th>
+      <th></th>
+    </tr>
+
+  <% @unis.each do |uni| %>
+    <tr>
+      <td><%= uni.account.student_id %></td>
+      <td><%= link_to uni.name, uni, :style=>"background-color: transparent;" %></td>
+      <td><%= uni.major %></td>
+      <td><%= uni.created_at.strftime("%Y年%m月%d日") %>
+      <% if uni.account.id == session[:usr] %>
+          <td style="text-align:center;", width="35"><%= link_to '編集', edit_uni_path(uni), :style=>"background-color: transparent;" %></td>
+          <td style="text-align:center;", width="35"><%= link_to '削除', uni, method: :delete, :style=>"background-color: transparent;" %></td>
+      <% end %>
+    </tr>
+  <% end %>
+  </table>
+  <div style="text-align:center">
+	<%= paginate @unis %>
+  </div>
+<% end %>
+</div>

@@ -1,0 +1,9 @@
+<div class="well">
+  <% if flash[:edit_selection] %>
+  <h2>就職試験報告書 編集 [3/3]</h2>
+  <% else %>
+  <h2>就職試験報告書 新規作成 [3/3]</h2>
+  <% end %>
+  <p>感想、後輩へのアドバイスを入力してください。</p>
+  <%= render 'form_impression' %>
+</div>

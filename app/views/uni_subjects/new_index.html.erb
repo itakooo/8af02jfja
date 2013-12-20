@@ -1,0 +1,11 @@
+<div class="well">
+  <h2>進学試験報告書 編集 [2/4]</h2>
+  <p>試験科目を登録します。</p>
+  <hr>
+
+  <%= render 'index_table' %>
+
+  <hr>
+  <%= link_to_function '戻る', 'history.back()', :class => 'btn' %>
+  <%= link_to '次へ', new_uni_uni_interview_path(@uni), :class=>"btn btn-primary" %>
+</div>

@@ -1,0 +1,43 @@
+<div class="row-fluid">
+  <div class="span3"></div>
+  <div class="span6">
+	<div class="well">
+	  <p id="notice"><%= notice %></p>
+	  <h2>アカウント情報</h2>
+	  <hr>
+	  <table class="table table-bordered">
+		<tr>
+		  <th>アカウントID</th>
+		  <th>名前</th>
+		  <th>学科</th>
+		</tr>
+
+		<tr>
+		  <th><%= @account.id %></th>
+		  <th><%= @account.name %></th>
+		  <th>
+			<% if @account.major == 1 %>
+			M科
+			<% elsif @account.major == 2 %>
+			E科
+			<% elsif @account.major == 3 %>
+			S科
+			<% elsif @account.major == 4 %>
+			J科
+			<% elsif @account.major == 5 %>
+			C科
+			<% end %>
+		  </th>
+	  </table>
+	  <br />
+	  <% if !session[:usr] %>
+	    <%= link_to '編集', edit_account_path(@account), :class=>"btn"%> 
+	    <%= link_to 'ログインへ', '/login', :class=>"btn btn-primary" ,:type=>"submit" %>
+	  <% else %>
+	    <%= link_to 'マイページへ', mypage_accounts_path, :class=>"btn"%> 
+	  <% end %>
+	</div>
+  </div>
+  <div class="span3"></div>
+</div>
+

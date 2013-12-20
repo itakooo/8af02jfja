@@ -1,0 +1,24 @@
+#coding: utf-8
+
+# 繝ｭ繧ｰ繧､繝ｳ繧呈桶縺����さ繝ｳ繝医Ο繝ｼ繝ｩ
+class LoginController < ApplicationController
+    skip_before_filter :check_logined
+    # 譛ｬ縺ｮ縺ｾ繧薙∪
+    def auth
+        usr = Account.authenticate(params[:student], params[:password])
+        if usr then
+            session[:usr] = usr.id
+            redirect_to params[:referer]
+        else
+            flash.now[:referer] = params[:referer]
+            @error = '繝ｭ繧ｰ繧､繝ｳ縺ｫ螟ｱ謨励＠縺ｾ縺励◆'
+            render 'index'
+        end
+    end
+    
+    def logout
+        reset_session
+        redirect_to :controller => 'top', :action => 'index'
+    end
+
+end

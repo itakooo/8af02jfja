@@ -1,0 +1,10 @@
+<div class="well">
+  <h2>就職試験報告書 編集 [2/3]</h2>
+  <p>次の選考に進んだ場合、その情報も登録してください。</p>
+
+  <%= render 'index_table' %>
+
+  <hr>
+  <%= link_to_function '戻る', 'history.back()', :class => 'btn' %>
+  <%= link_to '次へ', edit_impression_emp_path(@emp),:class => "btn btn-primary" %>
+</div>

@@ -1,0 +1,9 @@
+<%= stylesheet_link_tag "draws", :media => "all" %>
+<%= javascript_include_tag "draw" %>
+
+<div class="well">
+  <h2>面接の様子を新規作成</h2>
+  <p>メモ以外のオブジェクトは、ダブルクリックで消去できます。メモは25字以内で入力可能です。また、文字を全て消すとメモ自体が消去されます。</p>
+  <hr>
+  <%= render 'form' %>
+</div>

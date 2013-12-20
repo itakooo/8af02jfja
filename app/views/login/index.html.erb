@@ -1,0 +1,22 @@
+<%= form_tag :action => 'auth' do %>
+<div class="span3"></div>
+<div class="span6">
+  <div class="well">
+	<p style="color: Red"><%= @error %></p>
+	<h3>ログイン</h3>
+	<hr>
+    <div class="field">
+      <label>学籍番号<br />
+        <%= text_field_tag(:student, '', { :size => 5}) %></label>
+    </div>
+    <div class="field">
+      <label>パスワード<br />
+        <%= password_field_tag(:password, '', { :size => 16}) %></label>
+    </div>
+    <hr>
+    <%= hidden_field_tag :referer, flash[:referer] %>
+    <%= submit_tag 'ログイン',:class=>"btn btn-primary" %>
+	<% end %>
+  </div>
+</div>
+<div class="span3"></div>

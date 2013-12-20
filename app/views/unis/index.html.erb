@@ -1,0 +1,17 @@
+<div class="well">
+  <p id="notice"><%= notice %></p>
+  <%= render "search/form_uni_simple" %>
+
+  <div class="row-fluid">
+	<div class="span6">
+
+	  <h2>進学試験報告書一覧</h2>
+	</div>
+	<div class="span6" align="right">
+	  <br />
+	  <%= link_to '進学試験報告書の新規作成', new_uni_path, :class => 'btn btn-success' %>
+	</div>
+	<%= render "index_table"%>
+  </div>
+</div>
+  
