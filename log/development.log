@@ -2286,3 +2286,9 @@ Processing by SearchController#index as HTML
   [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
   Rendered search/index.html.erb within layouts/application (3.0ms)
 Completed 200 OK in 47ms (Views: 45.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 175.179.200.115 at 2013-12-20 17:00:44 +0900
+Processing by TopController#index as HTML
+  Rendered top/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 79ms (Views: 78.3ms | ActiveRecord: 0.0ms)
