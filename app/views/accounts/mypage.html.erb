@@ -5,7 +5,9 @@
   </div>
   <div class="span6" align="right">
 	<br />
-	<%= link_to 'アカウント情報編集', edit_account_path(@account), :class=>'btn' %>
+        <%= link_to edit_account_path(@account), :class => 'btn' do %>
+	<i class="icon-pencil icon-black"></i> アカウント情報編集 »
+	<% end %>
   </div>
 </div>
 <hr>
@@ -16,7 +18,9 @@
   </div>
   <div class="span6" align="right">
 	<br />
-	<%= link_to '就職試験報告書の新規作成', new_emp_path, :class => 'btn btn-info' %></h3>
+        <%= link_to emps_path, :class => 'btn' do %>
+	<i class="icon-pencil icon-black"></i> 就職試験報告書の新規作成 »
+	<% end %>
   </div>
 </div>
 
@@ -65,7 +69,9 @@
   </div>
   <div class="span6" align="right">
 	<br />
-	<%= link_to '進学試験報告書の新規作成', new_uni_path, :class => 'btn btn-success' %>
+        <%= link_to unis_path, :class => 'btn' do %>
+	<i class="icon-pencil icon-black"></i> 進学試験報告書の新規作成 »
+	<% end %>
   </div>
 </div>
 

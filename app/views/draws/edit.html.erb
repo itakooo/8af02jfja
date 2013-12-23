@@ -1,6 +1,15 @@
 <%= stylesheet_link_tag "draws", :media => "all" %>
-<%= javascript_include_tag "draw_edit" %>
+<%= javascript_include_tag "draw" %>
 
-<h1>面接の様子を編集</h1>
-
-<%= render 'form' %>
+<div class="well">
+  <h2>進学試験報告書 編集 [4/5]</h2>
+  <p>面接の様子を編集します。</p>
+  <ul>
+    <li>ボタンをクリックすることでオブジェクトが現れます。ドラッグで移動することができます。</li>
+    <li>ダブルクリックでオブジェクトを消去できます。</li>
+    <li>ホワイトボードは右クリックで回転させることができます。</li>
+    <li>メモはダブルクリックで編集、文字をすべて消すと消去できます。</li>
+  </ul>
+  <hr>
+  <%= render 'form' %>
+</div>

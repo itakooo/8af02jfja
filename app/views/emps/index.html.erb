@@ -8,7 +8,9 @@
 	</div>
 	<div class="span6" align="right">
 	  <br />
-	  <%= link_to '就職試験報告書の新規作成', new_emp_path, :class => 'btn btn-info' %>
+          <%= link_to emps_path, :class => 'btn' do %>
+	  <i class="icon-pencil icon-black"></i> 就職試験報告書の新規作成 »
+	  <% end %>
 	</div>
   </div>
   <%= render 'index_table' %>

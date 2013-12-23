@@ -125,4 +125,6 @@ Testc::Application.routes.draw do
 
   # match '*path', :controller => 'application', :action => 'error_404'
   # match '*not_found' => 'application#render_404'
+
+  match '*a', :to => 'errors#routing', :via => [:get]
 end
