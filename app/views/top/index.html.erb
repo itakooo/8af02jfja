@@ -3,10 +3,10 @@
     <h1>試験報告書閲覧システム</h1>
 	<br />
     <p>就職試験報告書・進学試験報告書を利用できるシステムです。
-	  <% if !session[:usr] %>
-      <br>利用するには右上からログインしてください。</p>
-	<% else %>
-	<br>
+      <% if !session[:usr] %>
+	<br>利用するには <%= link_to 'ログイン', login_index_path, :style=>"background-color: transparent;" %> してください。</p>
+    <% else %>
+        <br>
 	<%= link_to 'マイページ', mypage_accounts_path, :style=>"background-color: transparent;" %> から報告書を作成・編集できます。</p>
 <% end %>
 </div>
@@ -31,7 +31,9 @@
 	  <p>進学試験報告書は、先輩方が残してきた進学試験に関する情報です。</p>
 	  <br />
 	  <div align="center">
-		<%= link_to '進学試験報告書を見る »', unis_path, :class => 'btn btn-success' %>
+            <%= link_to unis_path, :class => 'btn btn-success' do %>
+	    <i class="icon-pencil icon-white"></i> 進学試験報告書を見る »
+	    <% end %>
 	  </div>
   </div></div>
   

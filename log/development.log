@@ -2358,3 +2358,2256 @@ Started GET "/" for 127.0.0.1 at 2013-12-20 22:29:43 +0900
 Processing by TopController#index as HTML
   Rendered top/index.html.erb within layouts/application (2.0ms)
 Completed 200 OK in 39ms (Views: 37.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/unis" for 127.0.0.1 at 2013-12-20 23:41:53 +0900
+Processing by UnisController#index as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :check_logined rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2013-12-20 23:41:54 +0900
+Processing by LoginController#index as HTML
+  Rendered login/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 435ms (Views: 434.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login/auth" for 127.0.0.1 at 2013-12-20 23:42:03 +0900
+Processing by LoginController#auth as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VMuTWzLElmqnaW9flMCDU1lMEssaq3GBrAboicZbhTM=", "student"=>"09411", "password"=>"[FILTERED]", "referer"=>"/unis", "commit"=>"ログイン"}
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."student_id" = '09411' AND "accounts"."password" = '31f30ddbcb1bf8446576f0e64aa4c88a9f055e3c' LIMIT 1[0m
+Redirected to http://localhost:3000/unis
+Completed 302 Found in 376ms (ActiveRecord: 64.0ms)
+
+
+Started GET "/unis" for 127.0.0.1 at 2013-12-20 23:42:03 +0900
+Processing by UnisController#index as HTML
+  [1m[35mAccount Load (37.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered search/_form_uni_simple.html.erb (3.0ms)
+  [1m[36mUni Load (4.0ms)[0m  [1mSELECT "unis".* FROM "unis" ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35m (24.0ms)[0m  SELECT COUNT(*) FROM "unis" 
+  Rendered unis/_index_table.html.erb (537.0ms)
+  Rendered unis/index.html.erb within layouts/application (572.0ms)
+Completed 200 OK in 637ms (Views: 567.0ms | ActiveRecord: 66.0ms)
+
+
+Started GET "/unis/88" for 127.0.0.1 at 2013-12-20 23:42:08 +0900
+Processing by UnisController#show as HTML
+  Parameters: {"id"=>"88"}
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mUni Load (0.0ms)[0m  SELECT "unis".* FROM "unis" WHERE "unis"."id" = ? LIMIT 1  [["id", "88"]]
+  [1m[36mUniInterview Load (8.0ms)[0m  [1mSELECT "uni_interviews".* FROM "uni_interviews" WHERE "uni_interviews"."uni_id" = 88 LIMIT 1[0m
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mUniApp Load (32.0ms)[0m  [1mSELECT "uni_apps".* FROM "uni_apps" WHERE "uni_apps"."uni_id" = 88 LIMIT 1[0m
+  [1m[35mUniSubmission Load (0.0ms)[0m  SELECT "uni_submissions".* FROM "uni_submissions" WHERE "uni_submissions"."uni_id" = 88 LIMIT 1
+  [1m[36mUniExam Load (0.0ms)[0m  [1mSELECT "uni_exams".* FROM "uni_exams" WHERE "uni_exams"."uni_id" = 88 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "uni_subjects" WHERE "uni_subjects"."uni_id" = 88
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "uni_subjects" WHERE "uni_subjects"."uni_id" = 88[0m
+  [1m[35mUniSubject Load (0.0ms)[0m  SELECT "uni_subjects".* FROM "uni_subjects" WHERE "uni_subjects"."uni_id" = 88
+  [1m[36mUniResult Load (1.0ms)[0m  [1mSELECT "uni_results".* FROM "uni_results" WHERE "uni_results"."uni_id" = 88 LIMIT 1[0m
+  [1m[35mDraw Load (1.0ms)[0m  SELECT "draws".* FROM "draws" WHERE "draws"."uni_id" = 88 LIMIT 1
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/gmaps4rails-1.5.6/app/views/gmaps4rails/_gmaps4rails.html.erb (2.0ms)
+  Rendered unis/show.html.erb within layouts/application (758.0ms)
+Completed 200 OK in 920ms (Views: 743.0ms | ActiveRecord: 46.0ms)
+
+
+Started GET "/unis/88" for 127.0.0.1 at 2013-12-20 23:45:20 +0900
+Processing by UnisController#show as HTML
+  Parameters: {"id"=>"88"}
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mUni Load (1.0ms)[0m  SELECT "unis".* FROM "unis" WHERE "unis"."id" = ? LIMIT 1  [["id", "88"]]
+  [1m[36mUniInterview Load (0.0ms)[0m  [1mSELECT "uni_interviews".* FROM "uni_interviews" WHERE "uni_interviews"."uni_id" = 88 LIMIT 1[0m
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mUniApp Load (0.0ms)[0m  [1mSELECT "uni_apps".* FROM "uni_apps" WHERE "uni_apps"."uni_id" = 88 LIMIT 1[0m
+  [1m[35mUniSubmission Load (1.0ms)[0m  SELECT "uni_submissions".* FROM "uni_submissions" WHERE "uni_submissions"."uni_id" = 88 LIMIT 1
+  [1m[36mUniExam Load (0.0ms)[0m  [1mSELECT "uni_exams".* FROM "uni_exams" WHERE "uni_exams"."uni_id" = 88 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "uni_subjects" WHERE "uni_subjects"."uni_id" = 88
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "uni_subjects" WHERE "uni_subjects"."uni_id" = 88[0m
+  [1m[35mUniSubject Load (1.0ms)[0m  SELECT "uni_subjects".* FROM "uni_subjects" WHERE "uni_subjects"."uni_id" = 88
+  [1m[36mUniResult Load (0.0ms)[0m  [1mSELECT "uni_results".* FROM "uni_results" WHERE "uni_results"."uni_id" = 88 LIMIT 1[0m
+  [1m[35mDraw Load (0.0ms)[0m  SELECT "draws".* FROM "draws" WHERE "draws"."uni_id" = 88 LIMIT 1
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/gmaps4rails-1.5.6/app/views/gmaps4rails/_gmaps4rails.html.erb (2.0ms)
+  Rendered unis/show.html.erb within layouts/application (30.0ms)
+Completed 200 OK in 218ms (Views: 208.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-23 17:55:09 +0900
+Processing by TopController#index as HTML
+  Rendered top/index.html.erb within layouts/application (307.0ms)
+Completed 200 OK in 1919ms (Views: 1702.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-23 18:06:31 +0900
+Processing by TopController#index as HTML
+ERROR: compiling _app_views_top_index_html_erb___630719361_30159540 RAISED D:/Users/itako/Desktop/system/app/views/top/index.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+...'ログイン' login_index_path, :style=>"background-color: ...
+...                               ^
+D:/Users/itako/Desktop/system/app/views/top/index.html.erb:7: syntax error, unexpected tASSOC, expecting tCOLON2 or '[' or '.'
+...ン' login_index_path, :style=>"background-color: transparen...
+...                               ^
+Function body:           def _app_views_top_index_html_erb___630719361_30159540(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "top/index";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new; content_for :extend do 
+@output_buffer.safe_concat('<div class="hero-unit" align="center" style="background-color:#f5f5f5">
+    <h1>試験報告書閲覧システム</h1>
+	<br />
+    <p>就職試験報告書・進学試験報告書を利用できるシステムです。
+');       if !session[:usr] 
+@output_buffer.safe_concat('	<br>利用するには ');@output_buffer.append= ( link_to 'ログイン' login_index_path, :style=>"background-color: transparent;" );@output_buffer.safe_concat('ログインしてください。</p>
+');     else 
+@output_buffer.safe_concat('        <br>
+	');@output_buffer.append= ( link_to 'マイページ', mypage_accounts_path, :style=>"background-color: transparent;" );@output_buffer.safe_concat(' から報告書を作成・編集できます。</p>
+'); end 
+@output_buffer.safe_concat('</div>
+'); end 
+@output_buffer.safe_concat('
+<div class="row-fluid">
+  <div class="span1"></div>
+  <div class="span5"><div class="well">
+      <div align="center"><h2>就職試験報告書</h2></div>
+      <p>就職試験報告書は、先輩方が残してきた就職試験に関する情報です。</p>
+	  <br />
+      <div align="center">
+        ');@output_buffer.append=  link_to emps_path, :class => 'btn btn-info' do @output_buffer.safe_concat('
+');@output_buffer.safe_concat('	<i class="icon-pencil icon-white"></i> 就職試験報告書を見る »
+');	 end 
+@output_buffer.safe_concat('      </div>
+	  
+  </div></div>
+  
+  <div class="span5"><div class="well">
+	  <div align="center"><h2>進学試験報告書</h2></div>
+	  <p>進学試験報告書は、先輩方が残してきた進学試験に関する情報です。</p>
+	  <br />
+	  <div align="center">
+		');@output_buffer.append= ( link_to '進学試験報告書を見る »', unis_path, :class => 'btn btn-success' );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	  </div>
+  </div></div>
+  
+  <div class="span1"></div>
+</div>
+');@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/template.rb:285:in `module_eval'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/template.rb:285:in `compile'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/template.rb:233:in `compile!'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/template.rb:142:in `block in render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/notifications.rb:125:in `instrument'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/template.rb:141:in `render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/renderer/template_renderer.rb:42:in `block (2 levels) in render_template'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/notifications.rb:123:in `block in instrument'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/notifications.rb:123:in `instrument'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/renderer/template_renderer.rb:41:in `block in render_template'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/renderer/template_renderer.rb:49:in `render_with_layout'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/renderer/template_renderer.rb:40:in `render_template'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/renderer/template_renderer.rb:13:in `render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/renderer/renderer.rb:36:in `render_template'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/renderer/renderer.rb:17:in `render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/abstract_controller/rendering.rb:109:in `_render_template'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/abstract_controller/rendering.rb:88:in `render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/rendering.rb:16:in `render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+C:/Ruby193/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activerecord-3.2.2/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/instrumentation.rb:39:in `render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/mime_responds.rb:196:in `respond_to'
+D:/Users/itako/Desktop/system/app/controllers/top_controller.rb:8:in `index'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/abstract_controller/base.rb:167:in `process_action'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/rendering.rb:10:in `process_action'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/callbacks.rb:414:in `_run__933517421__process_action__959052661__callbacks'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/callbacks.rb:405:in `__run_callback'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/callbacks.rb:81:in `run_callbacks'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/abstract_controller/callbacks.rb:17:in `process_action'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/rescue.rb:29:in `process_action'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/notifications.rb:123:in `block in instrument'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/notifications.rb:123:in `instrument'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/params_wrapper.rb:205:in `process_action'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activerecord-3.2.2/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/abstract_controller/base.rb:121:in `process'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/abstract_controller/rendering.rb:45:in `process'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal.rb:203:in `dispatch'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal.rb:246:in `block in action'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/routing/route_set.rb:67:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/routing/route_set.rb:67:in `dispatch'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/routing/route_set.rb:30:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/journey-1.0.3/lib/journey/router.rb:68:in `block in call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/journey-1.0.3/lib/journey/router.rb:56:in `each'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/journey-1.0.3/lib/journey/router.rb:56:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/routing/route_set.rb:594:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/etag.rb:23:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/conditionalget.rb:25:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/head.rb:14:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/flash.rb:242:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/session/abstract/id.rb:205:in `context'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/session/abstract/id.rb:200:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/cookies.rb:338:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activerecord-3.2.2/lib/active_record/query_cache.rb:64:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activerecord-3.2.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:443:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/callbacks.rb:405:in `_run__96212189__call__607518420__callbacks'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/callbacks.rb:405:in `__run_callback'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/callbacks.rb:81:in `run_callbacks'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/railties-3.2.2/lib/rails/rack/logger.rb:26:in `call_app'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/railties-3.2.2/lib/rails/rack/logger.rb:16:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/rails-clean-logs-1.1/lib/rails-clean-logs.rb:15:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/methodoverride.rb:21:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/runtime.rb:17:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/lock.rb:15:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/static.rb:61:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/railties-3.2.2/lib/rails/engine.rb:479:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/railties-3.2.2/lib/rails/application.rb:220:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/content_length.rb:14:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/railties-3.2.2/lib/rails/rack/log_tailer.rb:14:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/thin-1.6.1/lib/thin/connection.rb:82:in `block in pre_process'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/thin-1.6.1/lib/thin/connection.rb:80:in `catch'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/thin-1.6.1/lib/thin/connection.rb:80:in `pre_process'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/thin-1.6.1/lib/thin/connection.rb:55:in `process'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/thin-1.6.1/lib/thin/connection.rb:41:in `receive_data'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/eventmachine-1.0.3-x86-mingw32/lib/eventmachine.rb:187:in `run_machine'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/eventmachine-1.0.3-x86-mingw32/lib/eventmachine.rb:187:in `run'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/thin-1.6.1/lib/thin/backends/base.rb:73:in `start'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/thin-1.6.1/lib/thin/server.rb:162:in `start'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/handler/thin.rb:13:in `run'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/server.rb:265:in `start'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/railties-3.2.2/lib/rails/commands/server.rb:70:in `start'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/railties-3.2.2/lib/rails/commands.rb:55:in `block in <top (required)>'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/railties-3.2.2/lib/rails/commands.rb:50:in `tap'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/railties-3.2.2/lib/rails/commands.rb:50:in `<top (required)>'
+script/rails:6:in `require'
+script/rails:6:in `<main>'
+  Rendered top/index.html.erb within layouts/application (1600.1ms)
+Completed 500 Internal Server Error in 1685ms
+
+ActionView::Template::Error (D:/Users/itako/Desktop/system/app/views/top/index.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+...'ログイン' login_index_path, :style=>"background-color: ...
+...                               ^
+D:/Users/itako/Desktop/system/app/views/top/index.html.erb:7: syntax error, unexpected tASSOC, expecting tCOLON2 or '[' or '.'
+...ン' login_index_path, :style=>"background-color: transparen...
+...                               ^):
+    4: 	<br />
+    5:     <p>就職試験報告書・進学試験報告書を利用できるシステムです。
+    6:       <% if !session[:usr] %>
+    7: 	<br>利用するには <%= link_to 'ログイン' login_index_path, :style=>"background-color: transparent;" %>ログインしてください。</p>
+    8:     <% else %>
+    9:         <br>
+    10: 	<%= link_to 'マイページ', mypage_accounts_path, :style=>"background-color: transparent;" %> から報告書を作成・編集できます。</p>
+  app/controllers/top_controller.rb:8:in `index'
+
+
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (49.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (32.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (201.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-23 18:06:47 +0900
+Processing by TopController#index as HTML
+  Rendered top/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 59ms (Views: 58.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-23 18:06:56 +0900
+Processing by TopController#index as HTML
+  Rendered top/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 62ms (Views: 62.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2013-12-23 18:07:05 +0900
+Processing by LoginController#index as HTML
+  Rendered login/index.html.erb within layouts/application (89.0ms)
+Completed 200 OK in 127ms (Views: 126.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login/auth" for 127.0.0.1 at 2013-12-23 18:07:10 +0900
+Processing by LoginController#auth as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "student"=>"09411", "password"=>"[FILTERED]", "referer"=>"", "commit"=>"ログイン"}
+  [1m[36mAccount Load (46.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."student_id" = '09411' AND "accounts"."password" = '31f30ddbcb1bf8446576f0e64aa4c88a9f055e3c' LIMIT 1[0m
+Redirected to http://localhost:3000
+Completed 302 Found in 256ms (ActiveRecord: 46.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-23 18:07:10 +0900
+Processing by TopController#index as HTML
+  Rendered top/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 35ms (Views: 34.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-23 18:07:56 +0900
+Processing by TopController#index as HTML
+ERROR: compiling _app_views_top_index_html_erb___630719361_30157332 RAISED D:/Users/itako/Desktop/system/app/views/top/index.html.erb:42: syntax error, unexpected keyword_ensure, expecting keyword_end
+D:/Users/itako/Desktop/system/app/views/top/index.html.erb:44: syntax error, unexpected $end, expecting keyword_end
+Function body:           def _app_views_top_index_html_erb___630719361_30157332(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "top/index";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new; content_for :extend do 
+@output_buffer.safe_concat('<div class="hero-unit" align="center" style="background-color:#f5f5f5">
+    <h1>試験報告書閲覧システム</h1>
+	<br />
+    <p>就職試験報告書・進学試験報告書を利用できるシステムです。
+');       if !session[:usr] 
+@output_buffer.safe_concat('	<br>利用するには ');@output_buffer.append= ( link_to 'ログイン', login_index_path, :style=>"background-color: transparent;" );@output_buffer.safe_concat(' してください。</p>
+');     else 
+@output_buffer.safe_concat('        <br>
+	');@output_buffer.append= ( link_to 'マイページ', mypage_accounts_path, :style=>"background-color: transparent;" );@output_buffer.safe_concat(' から報告書を作成・編集できます。</p>
+'); end 
+@output_buffer.safe_concat('</div>
+'); end 
+@output_buffer.safe_concat('
+<div class="row-fluid">
+  <div class="span1"></div>
+  <div class="span5"><div class="well">
+      <div align="center"><h2>就職試験報告書</h2></div>
+      <p>就職試験報告書は、先輩方が残してきた就職試験に関する情報です。</p>
+	  <br />
+      <div align="center">
+        ');@output_buffer.append=  link_to emps_path, :class => 'btn btn-info' do @output_buffer.safe_concat('
+');@output_buffer.safe_concat('	<i class="icon-pencil icon-white"></i> 就職試験報告書を見る »
+');	 end 
+@output_buffer.safe_concat('      </div>
+	  
+  </div></div>
+  
+  <div class="span5"><div class="well">
+	  <div align="center"><h2>進学試験報告書</h2></div>
+	  <p>進学試験報告書は、先輩方が残してきた進学試験に関する情報です。</p>
+	  <br />
+	  <div align="center">
+            ');@output_buffer.append=  link_to unis_path, :class => 'btn btn-info' do @output_buffer.safe_concat('
+');@output_buffer.safe_concat('	    <i class="icon-pencil icon-white"></i> 進学試験報告書を見る »
+	  </div>
+  </div></div>
+  
+  <div class="span1"></div>
+</div>
+');@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/template.rb:285:in `module_eval'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/template.rb:285:in `compile'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/template.rb:233:in `compile!'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/template.rb:142:in `block in render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/notifications.rb:125:in `instrument'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/template.rb:141:in `render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/renderer/template_renderer.rb:42:in `block (2 levels) in render_template'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/notifications.rb:123:in `block in instrument'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/notifications.rb:123:in `instrument'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/renderer/template_renderer.rb:41:in `block in render_template'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/renderer/template_renderer.rb:49:in `render_with_layout'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/renderer/template_renderer.rb:40:in `render_template'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/renderer/template_renderer.rb:13:in `render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/renderer/renderer.rb:36:in `render_template'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/renderer/renderer.rb:17:in `render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/abstract_controller/rendering.rb:109:in `_render_template'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/abstract_controller/rendering.rb:88:in `render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/rendering.rb:16:in `render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+C:/Ruby193/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activerecord-3.2.2/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/instrumentation.rb:39:in `render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/mime_responds.rb:196:in `respond_to'
+D:/Users/itako/Desktop/system/app/controllers/top_controller.rb:8:in `index'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/abstract_controller/base.rb:167:in `process_action'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/rendering.rb:10:in `process_action'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/callbacks.rb:414:in `_run__933517421__process_action__959052661__callbacks'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/callbacks.rb:405:in `__run_callback'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/callbacks.rb:81:in `run_callbacks'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/abstract_controller/callbacks.rb:17:in `process_action'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/rescue.rb:29:in `process_action'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/notifications.rb:123:in `block in instrument'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/notifications.rb:123:in `instrument'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/params_wrapper.rb:205:in `process_action'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activerecord-3.2.2/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/abstract_controller/base.rb:121:in `process'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/abstract_controller/rendering.rb:45:in `process'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal.rb:203:in `dispatch'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal.rb:246:in `block in action'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/routing/route_set.rb:67:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/routing/route_set.rb:67:in `dispatch'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/routing/route_set.rb:30:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/journey-1.0.3/lib/journey/router.rb:68:in `block in call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/journey-1.0.3/lib/journey/router.rb:56:in `each'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/journey-1.0.3/lib/journey/router.rb:56:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/routing/route_set.rb:594:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/etag.rb:23:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/conditionalget.rb:25:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/head.rb:14:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/flash.rb:242:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/session/abstract/id.rb:205:in `context'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/session/abstract/id.rb:200:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/cookies.rb:338:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activerecord-3.2.2/lib/active_record/query_cache.rb:64:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activerecord-3.2.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:443:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/callbacks.rb:405:in `_run__96212189__call__607518420__callbacks'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/callbacks.rb:405:in `__run_callback'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/callbacks.rb:81:in `run_callbacks'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/railties-3.2.2/lib/rails/rack/logger.rb:26:in `call_app'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/railties-3.2.2/lib/rails/rack/logger.rb:16:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/rails-clean-logs-1.1/lib/rails-clean-logs.rb:15:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/methodoverride.rb:21:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/runtime.rb:17:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/lock.rb:15:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/static.rb:61:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/railties-3.2.2/lib/rails/engine.rb:479:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/railties-3.2.2/lib/rails/application.rb:220:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/content_length.rb:14:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/railties-3.2.2/lib/rails/rack/log_tailer.rb:14:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/thin-1.6.1/lib/thin/connection.rb:82:in `block in pre_process'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/thin-1.6.1/lib/thin/connection.rb:80:in `catch'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/thin-1.6.1/lib/thin/connection.rb:80:in `pre_process'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/thin-1.6.1/lib/thin/connection.rb:55:in `process'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/thin-1.6.1/lib/thin/connection.rb:41:in `receive_data'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/eventmachine-1.0.3-x86-mingw32/lib/eventmachine.rb:187:in `run_machine'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/eventmachine-1.0.3-x86-mingw32/lib/eventmachine.rb:187:in `run'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/thin-1.6.1/lib/thin/backends/base.rb:73:in `start'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/thin-1.6.1/lib/thin/server.rb:162:in `start'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/handler/thin.rb:13:in `run'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/server.rb:265:in `start'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/railties-3.2.2/lib/rails/commands/server.rb:70:in `start'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/railties-3.2.2/lib/rails/commands.rb:55:in `block in <top (required)>'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/railties-3.2.2/lib/rails/commands.rb:50:in `tap'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/railties-3.2.2/lib/rails/commands.rb:50:in `<top (required)>'
+script/rails:6:in `require'
+script/rails:6:in `<main>'
+  Rendered top/index.html.erb within layouts/application (48.0ms)
+Completed 500 Internal Server Error in 58ms
+
+ActionView::Template::Error (D:/Users/itako/Desktop/system/app/views/top/index.html.erb:42: syntax error, unexpected keyword_ensure, expecting keyword_end
+D:/Users/itako/Desktop/system/app/views/top/index.html.erb:44: syntax error, unexpected $end, expecting keyword_end):
+    39:   <div class="span1"></div>
+    40: </div>
+  app/controllers/top_controller.rb:8:in `index'
+
+
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (8.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (18.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (67.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-23 18:08:11 +0900
+Processing by TopController#index as HTML
+  Rendered top/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 59ms (Views: 59.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-23 18:08:19 +0900
+Processing by TopController#index as HTML
+  Rendered top/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 26ms (Views: 25.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2013-12-23 18:08:28 +0900
+Processing by SearchController#index as HTML
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered search/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 61ms (Views: 51.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/uni" for 127.0.0.1 at 2013-12-23 18:08:38 +0900
+Processing by SearchController#uni as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered search/_form_uni.html.erb (44.0ms)
+  Rendered search/uni.html.erb within layouts/application (72.0ms)
+Completed 200 OK in 103ms (Views: 100.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/search/result_uni" for 127.0.0.1 at 2013-12-23 18:08:53 +0900
+Processing by SearchController#result_uni as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "name"=>"東京", "major"=>"", "location"=>"", "glouping"=>"", "subjects"=>"", "commit"=>"検索"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUni Load (12.0ms)[0m  [1mSELECT "unis".* FROM "unis" WHERE (name LIKE '%東京%' AND location LIKE '%%' AND major LIKE '%%') ORDER BY created_at DESC[0m
+Completed 500 Internal Server Error in 111ms
+
+NoMethodError (undefined method `paginate' for #<ActiveRecord::Relation:0x40c89d8>):
+  app/controllers/search_controller.rb:84:in `result_uni'
+
+
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (7.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (43.0ms)
+
+
+Started POST "/search/result_uni" for 127.0.0.1 at 2013-12-23 18:10:30 +0900
+Processing by SearchController#result_uni as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "name"=>"東京", "major"=>"", "location"=>"", "glouping"=>"", "subjects"=>"", "commit"=>"検索"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered search/_form_uni.html.erb (3.0ms)
+  [1m[36m (20.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "unis" WHERE (name LIKE '%東京%' AND location LIKE '%%' AND major LIKE '%%') LIMIT 10 OFFSET 0) subquery_for_count [0m
+  [1m[35mUni Load (19.0ms)[0m  SELECT "unis".* FROM "unis" WHERE (name LIKE '%東京%' AND location LIKE '%%' AND major LIKE '%%') ORDER BY created_at DESC LIMIT 10 OFFSET 0
+  [1m[36mAccount Load (11.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "unis" WHERE (name LIKE '%東京%' AND location LIKE '%%' AND major LIKE '%%')
+  Rendered unis/_index_table.html.erb (291.0ms)
+  Rendered search/result_uni.html.erb within layouts/application (350.0ms)
+Completed 200 OK in 895ms (Views: 338.0ms | ActiveRecord: 133.0ms)
+
+
+Started POST "/search/result_uni" for 127.0.0.1 at 2013-12-23 18:10:46 +0900
+Processing by SearchController#result_uni as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "name"=>"", "major"=>"情報", "location"=>"", "glouping"=>"", "subjects"=>"", "commit"=>"検索"}
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered search/_form_uni.html.erb (3.0ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "unis" WHERE (name LIKE '%%' AND location LIKE '%%' AND major LIKE '%情報%') LIMIT 10 OFFSET 0) subquery_for_count 
+  [1m[36mUni Load (0.0ms)[0m  [1mSELECT "unis".* FROM "unis" WHERE (name LIKE '%%' AND location LIKE '%%' AND major LIKE '%情報%') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "unis" WHERE (name LIKE '%%' AND location LIKE '%%' AND major LIKE '%情報%')
+  Rendered unis/_index_table.html.erb (17.0ms)
+  Rendered search/result_uni.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 51ms (Views: 48.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2013-12-23 18:13:01 +0900
+Processing by SearchController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered search/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 96ms (Views: 53.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/search/emp" for 127.0.0.1 at 2013-12-23 18:13:05 +0900
+Processing by SearchController#emp as HTML
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered search/_form_emp.html.erb (30.0ms)
+  Rendered search/emp.html.erb within layouts/application (49.0ms)
+Completed 200 OK in 96ms (Views: 92.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/search/result_emp" for 127.0.0.1 at 2013-12-23 18:13:10 +0900
+Processing by SearchController#result_emp as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "name"=>"", "location"=>"長野", "glouping"=>"", "commit"=>"検索"}
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered search/_form_emp.html.erb (2.0ms)
+  [1m[35m (23.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "emps" WHERE (name LIKE '%%' AND location LIKE '%長野%') LIMIT 10 OFFSET 0) subquery_for_count 
+  [1m[36mEmp Load (33.0ms)[0m  [1mSELECT "emps".* FROM "emps" WHERE (name LIKE '%%' AND location LIKE '%長野%') ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mEmpSelection Load (1.0ms)[0m  [1mSELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 34[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mEmpSelection Load (1.0ms)[0m  [1mSELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 33[0m
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 1 LIMIT 1
+  [1m[36mEmpSelection Load (0.0ms)[0m  [1mSELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 27[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "emps" WHERE (name LIKE '%%' AND location LIKE '%長野%')
+  Rendered emps/_index_table.html.erb (195.0ms)
+  Rendered search/result_emp.html.erb within layouts/application (283.0ms)
+Completed 200 OK in 359ms (Views: 246.0ms | ActiveRecord: 60.0ms)
+
+
+Started GET "/emps" for 127.0.0.1 at 2013-12-23 18:14:30 +0900
+Processing by EmpsController#index as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered search/_form_emp_simple.html.erb (3.0ms)
+  [1m[35mEmp Load (0.0ms)[0m  SELECT "emps".* FROM "emps" ORDER BY created_at DESC LIMIT 10 OFFSET 0
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (1.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 35
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 34
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (1.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 33
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 32
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (1.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 31
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (1.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 30
+  [1m[36mAccount Load (1.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 1 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 29
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 1 LIMIT 1[0m
+  [1m[35mEmpSelection Load (1.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 28
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 1 LIMIT 1[0m
+  [1m[35mEmpSelection Load (1.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 27
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 1 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 26
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "emps" [0m
+  Rendered emps/_index_table.html.erb (256.0ms)
+  Rendered emps/index.html.erb within layouts/application (295.0ms)
+Completed 200 OK in 345ms (Views: 335.0ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2013-12-23 18:14:34 +0900
+Processing by SearchController#index as HTML
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered search/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 25ms (Views: 23.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search/emp" for 127.0.0.1 at 2013-12-23 18:14:37 +0900
+Processing by SearchController#emp as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered search/_form_emp.html.erb (3.0ms)
+  Rendered search/emp.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 29ms (Views: 27.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/search/result_emp" for 127.0.0.1 at 2013-12-23 18:14:48 +0900
+Processing by SearchController#result_emp as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "name"=>"", "location"=>"長野", "glouping"=>"", "commit"=>"検索"}
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered search/_form_emp.html.erb (2.0ms)
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "emps" WHERE (name LIKE '%%' AND location LIKE '%長野%') LIMIT 10 OFFSET 0) subquery_for_count [0m
+  [1m[35mEmp Load (21.0ms)[0m  SELECT "emps".* FROM "emps" WHERE (name LIKE '%%' AND location LIKE '%長野%') ORDER BY created_at DESC LIMIT 10 OFFSET 0
+  [1m[36mAccount Load (1.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 34
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 33
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 1 LIMIT 1[0m
+  [1m[35mEmpSelection Load (1.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 27
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "emps" WHERE (name LIKE '%%' AND location LIKE '%長野%')[0m
+  Rendered emps/_index_table.html.erb (38.0ms)
+  Rendered search/result_emp.html.erb within layouts/application (47.0ms)
+Completed 200 OK in 71ms (Views: 44.0ms | ActiveRecord: 25.0ms)
+
+
+Started POST "/search/result_emp" for 127.0.0.1 at 2013-12-23 18:15:26 +0900
+Processing by SearchController#result_emp as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "name"=>"", "location"=>"長野", "glouping"=>"", "commit"=>"検索"}
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered search/_form_emp.html.erb (2.0ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "emps" WHERE (name LIKE '%%' AND location LIKE '%長野%') LIMIT 10 OFFSET 0) subquery_for_count [0m
+  [1m[35mEmp Load (79.0ms)[0m  SELECT "emps".* FROM "emps" WHERE (name LIKE '%%' AND location LIKE '%長野%') ORDER BY created_at DESC LIMIT 10 OFFSET 0
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (1.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 34
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 33
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 1 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 27
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "emps" WHERE (name LIKE '%%' AND location LIKE '%長野%')[0m
+  Rendered emps/_index_table.html.erb (97.0ms)
+  Rendered search/result_emp.html.erb within layouts/application (108.0ms)
+Completed 200 OK in 132ms (Views: 49.0ms | ActiveRecord: 82.0ms)
+
+
+Started POST "/search/result_emp" for 127.0.0.1 at 2013-12-23 18:16:13 +0900
+Processing by SearchController#result_emp as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "name"=>"", "location"=>"あああああ", "glouping"=>"", "commit"=>"検索"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered search/_form_emp.html.erb (3.0ms)
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "emps" WHERE (name LIKE '%%' AND location LIKE '%あああああ%') LIMIT 10 OFFSET 0) subquery_for_count [0m
+  Rendered search/result_emp.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 35ms (Views: 31.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/search/result_emp" for 127.0.0.1 at 2013-12-23 18:16:19 +0900
+Processing by SearchController#result_emp as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "name"=>"", "location"=>"長野", "glouping"=>"", "commit"=>"検索"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered search/_form_emp.html.erb (3.0ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "emps" WHERE (name LIKE '%%' AND location LIKE '%長野%') LIMIT 10 OFFSET 0) subquery_for_count [0m
+  [1m[35mEmp Load (1.0ms)[0m  SELECT "emps".* FROM "emps" WHERE (name LIKE '%%' AND location LIKE '%長野%') ORDER BY created_at DESC LIMIT 10 OFFSET 0
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 34
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (1.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 33
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 1 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 27
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "emps" WHERE (name LIKE '%%' AND location LIKE '%長野%')[0m
+  Rendered emps/_index_table.html.erb (18.0ms)
+  Rendered search/result_emp.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 53ms (Views: 48.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/emps/34" for 127.0.0.1 at 2013-12-23 18:16:28 +0900
+Processing by EmpsController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mEmp Load (1.0ms)[0m  [1mSELECT "emps".* FROM "emps" WHERE "emps"."id" = ? LIMIT 1[0m  [["id", "34"]]
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 34
+  [1m[36mEmpTest Load (0.0ms)[0m  [1mSELECT "emp_tests".* FROM "emp_tests" WHERE "emp_tests"."emp_selection_id" = 25 LIMIT 1[0m
+  [1m[35mEmpInterview Load (17.0ms)[0m  SELECT "emp_interviews".* FROM "emp_interviews" WHERE "emp_interviews"."emp_selection_id" = 25 LIMIT 1
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSubmission Load (0.0ms)[0m  SELECT "emp_submissions".* FROM "emp_submissions" WHERE "emp_submissions"."emp_id" = 34 LIMIT 1
+  [1m[36mEmpBriefing Load (1.0ms)[0m  [1mSELECT "emp_briefings".* FROM "emp_briefings" WHERE "emp_briefings"."emp_id" = 34 LIMIT 1[0m
+  [1m[35mEmpWebtest Load (25.0ms)[0m  SELECT "emp_webtests".* FROM "emp_webtests" WHERE "emp_webtests"."emp_id" = 34 LIMIT 1
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/gmaps4rails-1.5.6/app/views/gmaps4rails/_gmaps4rails.html.erb (112.0ms)
+  Rendered emps/show.html.erb within layouts/application (412.0ms)
+Completed 200 OK in 668ms (Views: 421.0ms | ActiveRecord: 49.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-23 18:16:55 +0900
+Processing by TopController#index as HTML
+  Rendered top/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 25ms (Views: 25.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/unis" for 127.0.0.1 at 2013-12-23 18:17:12 +0900
+Processing by UnisController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered search/_form_uni_simple.html.erb (1.0ms)
+  [1m[35mUni Load (2.0ms)[0m  SELECT "unis".* FROM "unis" ORDER BY created_at DESC LIMIT 10 OFFSET 0
+  [1m[36mAccount Load (1.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "unis" [0m
+  Rendered unis/_index_table.html.erb (95.0ms)
+  Rendered unis/index.html.erb within layouts/application (103.0ms)
+Completed 200 OK in 153ms (Views: 144.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/unis/new" for 127.0.0.1 at 2013-12-23 18:17:32 +0900
+Processing by UnisController#new as HTML
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (11.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  Rendered unis/_form_uni.html.erb (903.1ms)
+  Rendered unis/new.html.erb within layouts/application (965.1ms)
+Completed 200 OK in 1163ms (Views: 988.1ms | ActiveRecord: 42.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 18:17:42 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+You must provide an address
+  Rendered unis/_form_uni.html.erb (109.0ms)
+  Rendered unis/new.html.erb within layouts/application (111.0ms)
+Completed 200 OK in 392ms (Views: 133.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 18:19:42 +0900
+
+ArgumentError (Unknown validator: 'MessageValidator'):
+  app/models/uni.rb:39:in `<class:Uni>'
+  app/models/uni.rb:3:in `<top (required)>'
+  app/controllers/unis_controller.rb:4:in `<top (required)>'
+
+
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (8.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (62.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 18:20:02 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+You must provide an address
+  Rendered unis/_form_uni.html.erb (99.0ms)
+  Rendered unis/new.html.erb within layouts/application (102.0ms)
+Completed 200 OK in 366ms (Views: 126.0ms | ActiveRecord: 5.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 18:21:12 +0900
+
+ActionController::RoutingError (undefined local variable or method `msg' for #<Class:0x44cad98>):
+  app/models/uni.rb:14:in `<class:Uni>'
+  app/models/uni.rb:3:in `<top (required)>'
+  app/controllers/unis_controller.rb:4:in `<top (required)>'
+
+
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 18:21:34 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+You must provide an address
+  Rendered unis/_form_uni.html.erb (80.0ms)
+  Rendered unis/new.html.erb within layouts/application (82.0ms)
+Completed 200 OK in 365ms (Views: 132.0ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/unis" for 127.0.0.1 at 2013-12-23 18:22:24 +0900
+Processing by UnisController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered search/_form_uni_simple.html.erb (2.0ms)
+  [1m[35mUni Load (24.0ms)[0m  SELECT "unis".* FROM "unis" ORDER BY created_at DESC LIMIT 10 OFFSET 0
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "unis" [0m
+  Rendered unis/_index_table.html.erb (109.0ms)
+  Rendered unis/index.html.erb within layouts/application (116.0ms)
+Completed 200 OK in 147ms (Views: 119.0ms | ActiveRecord: 24.0ms)
+
+
+Started GET "/unis/new" for 127.0.0.1 at 2013-12-23 18:22:27 +0900
+Processing by UnisController#new as HTML
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  Rendered unis/_form_uni.html.erb (87.0ms)
+  Rendered unis/new.html.erb within layouts/application (89.0ms)
+Completed 200 OK in 117ms (Views: 111.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 18:23:36 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+You must provide an address
+  Rendered unis/_form_uni.html.erb (64.0ms)
+  Rendered unis/new.html.erb within layouts/application (67.0ms)
+Completed 200 OK in 137ms (Views: 123.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/mypage" for 127.0.0.1 at 2013-12-23 18:28:03 +0900
+Processing by AccountsController#mypage as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "emps" WHERE (account_id == 4) LIMIT 20 OFFSET 0) subquery_for_count [0m
+  [1m[35mEmp Load (1.0ms)[0m  SELECT "emps".* FROM "emps" WHERE (account_id == 4) ORDER BY created_at DESC LIMIT 20 OFFSET 0
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (1.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 35
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 34
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 33
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 32
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (1.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 31
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 30
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "emps" WHERE (account_id == 4)[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "unis" WHERE (account_id == 4) LIMIT 20 OFFSET 0) subquery_for_count 
+  [1m[36mUni Load (2.0ms)[0m  [1mSELECT "unis".* FROM "unis" WHERE (account_id == 4) ORDER BY created_at DESC LIMIT 20 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "unis" WHERE (account_id == 4)
+  Rendered accounts/mypage.html.erb within layouts/application (374.0ms)
+Completed 200 OK in 517ms (Views: 420.0ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/unis/new" for 127.0.0.1 at 2013-12-23 18:28:07 +0900
+Processing by UnisController#new as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  Rendered unis/_form_uni.html.erb (77.0ms)
+  Rendered unis/new.html.erb within layouts/application (104.0ms)
+Completed 200 OK in 272ms (Views: 127.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 18:28:16 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"a", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (96.0ms)
+  Rendered unis/new.html.erb within layouts/application (100.0ms)
+Completed 200 OK in 147ms (Views: 123.0ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 18:31:55 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"a", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (71.0ms)
+  Rendered unis/new.html.erb within layouts/application (74.0ms)
+Completed 200 OK in 109ms (Views: 97.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 18:33:14 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"a", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (85.0ms)
+  Rendered unis/new.html.erb within layouts/application (87.0ms)
+Completed 200 OK in 120ms (Views: 108.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 18:37:57 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"a", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (1.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (67.0ms)
+  Rendered unis/new.html.erb within layouts/application (1593.1ms)
+Completed 200 OK in 2327ms (Views: 2316.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-23 18:38:04 +0900
+Processing by TopController#index as HTML
+  Rendered top/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 87ms (Views: 86.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/unis" for 127.0.0.1 at 2013-12-23 18:38:10 +0900
+Processing by UnisController#index as HTML
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered search/_form_uni_simple.html.erb (2.0ms)
+  [1m[36mUni Load (2.0ms)[0m  [1mSELECT "unis".* FROM "unis" ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "unis" 
+  Rendered unis/_index_table.html.erb (55.0ms)
+  Rendered unis/index.html.erb within layouts/application (62.0ms)
+Completed 200 OK in 89ms (Views: 83.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/unis/new" for 127.0.0.1 at 2013-12-23 18:38:14 +0900
+Processing by UnisController#new as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  Rendered unis/_form_uni.html.erb (61.0ms)
+  Rendered unis/new.html.erb within layouts/application (70.0ms)
+Completed 200 OK in 163ms (Views: 157.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 18:38:17 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (66.0ms)
+  Rendered unis/new.html.erb within layouts/application (69.0ms)
+Completed 200 OK in 104ms (Views: 92.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 18:40:37 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (68.0ms)
+  Rendered unis/new.html.erb within layouts/application (125.0ms)
+Completed 200 OK in 525ms (Views: 511.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 18:41:17 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (68.0ms)
+  Rendered unis/new.html.erb within layouts/application (174.0ms)
+Completed 500 Internal Server Error in 606ms
+
+ActionView::Template::Error (Invalid CSS after "...(#ee5f5b, 30%))": expected "}", was "@extend .error"
+  (in D:/Users/itako/Desktop/system/app/assets/stylesheets/scaffolds.css.scss)):
+    3:   <head>
+    4:     <title>報告書閲覧システム</title>
+    5:     <%= javascript_include_tag "application" %>
+    6:     <%= stylesheet_link_tag    "application", :media => "all" %>
+    7:     <style>
+    8:       body {
+    9:         padding-top: 60px;
+  app/assets/stylesheets/scaffolds.css.scss:35
+  app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb__131392598_35504772'
+  app/controllers/unis_controller.rb:120:in `block (2 levels) in create'
+  app/controllers/unis_controller.rb:113:in `create'
+
+
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (10.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (42.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 18:41:35 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (65.0ms)
+  Rendered unis/new.html.erb within layouts/application (69.0ms)
+Completed 500 Internal Server Error in 134ms
+
+ActionView::Template::Error (Invalid CSS after ".field_with_errors": expected "{", was "@include formFi..."
+  (in D:/Users/itako/Desktop/system/app/assets/stylesheets/scaffolds.css.scss)):
+    3:   <head>
+    4:     <title>報告書閲覧システム</title>
+    5:     <%= javascript_include_tag "application" %>
+    6:     <%= stylesheet_link_tag    "application", :media => "all" %>
+    7:     <style>
+    8:       body {
+    9:         padding-top: 60px;
+  app/assets/stylesheets/scaffolds.css.scss:34
+  app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb__131392598_35504772'
+  app/controllers/unis_controller.rb:120:in `block (2 levels) in create'
+  app/controllers/unis_controller.rb:113:in `create'
+
+
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (10.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (43.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 18:41:48 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (67.0ms)
+  Rendered unis/new.html.erb within layouts/application (71.0ms)
+Completed 500 Internal Server Error in 216ms
+
+ActionView::Template::Error (Undefined mixin 'formFieldState'.
+  (in D:/Users/itako/Desktop/system/app/assets/stylesheets/scaffolds.css.scss)):
+    3:   <head>
+    4:     <title>報告書閲覧システム</title>
+    5:     <%= javascript_include_tag "application" %>
+    6:     <%= stylesheet_link_tag    "application", :media => "all" %>
+    7:     <style>
+    8:       body {
+    9:         padding-top: 60px;
+  app/assets/stylesheets/scaffolds.css.scss:34:in `formFieldState'
+  app/assets/stylesheets/scaffolds.css.scss:34
+  app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb__131392598_35504772'
+  app/controllers/unis_controller.rb:120:in `block (2 levels) in create'
+  app/controllers/unis_controller.rb:113:in `create'
+
+
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (12.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (48.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 18:42:52 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (65.0ms)
+  Rendered unis/new.html.erb within layouts/application (68.0ms)
+Completed 200 OK in 232ms (Views: 220.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 18:48:44 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (64.0ms)
+  Rendered unis/new.html.erb within layouts/application (68.0ms)
+Completed 200 OK in 266ms (Views: 254.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 18:50:24 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (70.0ms)
+  Rendered unis/new.html.erb within layouts/application (77.0ms)
+Completed 200 OK in 281ms (Views: 265.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 18:51:07 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (68.0ms)
+  Rendered unis/new.html.erb within layouts/application (71.0ms)
+Completed 200 OK in 273ms (Views: 262.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 18:51:15 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (64.0ms)
+  Rendered unis/new.html.erb within layouts/application (69.0ms)
+Completed 200 OK in 269ms (Views: 247.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 18:51:28 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (65.0ms)
+  Rendered unis/new.html.erb within layouts/application (68.0ms)
+Completed 200 OK in 308ms (Views: 296.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 18:52:20 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (64.0ms)
+  Rendered unis/new.html.erb within layouts/application (69.0ms)
+Completed 200 OK in 284ms (Views: 272.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 18:55:37 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (67.0ms)
+  Rendered unis/new.html.erb within layouts/application (104.0ms)
+Completed 200 OK in 441ms (Views: 428.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 18:57:25 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (78.0ms)
+  Rendered unis/new.html.erb within layouts/application (81.0ms)
+Completed 200 OK in 385ms (Views: 372.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 19:01:14 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (72.0ms)
+  Rendered unis/new.html.erb within layouts/application (77.0ms)
+Completed 200 OK in 259ms (Views: 246.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 19:02:00 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (66.0ms)
+  Rendered unis/new.html.erb within layouts/application (69.0ms)
+Completed 200 OK in 106ms (Views: 92.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 19:02:34 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (106.0ms)
+  Rendered unis/new.html.erb within layouts/application (281.0ms)
+Completed 200 OK in 318ms (Views: 306.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 19:02:46 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (80.0ms)
+  Rendered unis/new.html.erb within layouts/application (434.0ms)
+Completed 200 OK in 470ms (Views: 458.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 19:03:47 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (32.0ms)
+  Rendered unis/new.html.erb within layouts/application (39.0ms)
+Completed 200 OK in 272ms (Views: 259.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 19:04:10 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (66.0ms)
+  Rendered unis/new.html.erb within layouts/application (72.0ms)
+Completed 200 OK in 249ms (Views: 237.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 19:07:07 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (32.0ms)
+  Rendered unis/new.html.erb within layouts/application (258.0ms)
+Completed 200 OK in 296ms (Views: 282.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 19:08:11 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (71.0ms)
+  Rendered unis/new.html.erb within layouts/application (143.0ms)
+Completed 200 OK in 209ms (Views: 196.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 19:08:37 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (80.0ms)
+  Rendered unis/new.html.erb within layouts/application (155.0ms)
+Completed 200 OK in 192ms (Views: 178.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 19:09:31 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (35.0ms)
+  Rendered unis/new.html.erb within layouts/application (142.0ms)
+Completed 200 OK in 214ms (Views: 202.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 19:10:41 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (160.0ms)
+  Rendered unis/new.html.erb within layouts/application (290.0ms)
+Completed 200 OK in 334ms (Views: 317.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 19:12:43 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (86.0ms)
+  Rendered unis/new.html.erb within layouts/application (158.0ms)
+Completed 200 OK in 195ms (Views: 182.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 19:13:23 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (78.0ms)
+  Rendered unis/new.html.erb within layouts/application (161.0ms)
+Completed 200 OK in 197ms (Views: 184.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 19:13:38 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (70.0ms)
+  Rendered unis/new.html.erb within layouts/application (199.0ms)
+Completed 200 OK in 234ms (Views: 223.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 19:14:15 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (117.0ms)
+  Rendered unis/new.html.erb within layouts/application (244.0ms)
+Completed 200 OK in 287ms (Views: 274.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 19:17:16 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (274.0ms)
+  Rendered unis/new.html.erb within layouts/application (512.0ms)
+Completed 200 OK in 551ms (Views: 538.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 19:18:30 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (69.0ms)
+  Rendered unis/new.html.erb within layouts/application (138.0ms)
+Completed 200 OK in 173ms (Views: 161.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 19:19:27 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (106.0ms)
+  Rendered unis/new.html.erb within layouts/application (205.0ms)
+Completed 200 OK in 269ms (Views: 250.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 19:19:32 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (72.0ms)
+  Rendered unis/new.html.erb within layouts/application (79.0ms)
+Completed 200 OK in 113ms (Views: 101.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 19:20:53 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (35.0ms)
+  Rendered unis/new.html.erb within layouts/application (245.0ms)
+Completed 200 OK in 281ms (Views: 269.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 19:26:51 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"あ", "location"=>"あ", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (68.0ms)
+  Rendered unis/new.html.erb within layouts/application (135.0ms)
+Completed 200 OK in 169ms (Views: 157.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 19:27:11 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"あ", "location"=>"あ", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (63.0ms)
+  Rendered unis/new.html.erb within layouts/application (95.0ms)
+Completed 200 OK in 405ms (Views: 394.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 19:28:05 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"あ", "location"=>"あ", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (70.0ms)
+  Rendered unis/new.html.erb within layouts/application (138.0ms)
+Completed 200 OK in 174ms (Views: 162.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 19:28:41 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"あ", "location"=>"あ", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (87.0ms)
+  Rendered unis/new.html.erb within layouts/application (199.0ms)
+Completed 200 OK in 234ms (Views: 222.0ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 19:31:16 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"あ", "location"=>"あ", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (69.0ms)
+  Rendered unis/new.html.erb within layouts/application (202.0ms)
+Completed 200 OK in 236ms (Views: 225.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 19:32:34 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"あ", "location"=>"あ", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (82.0ms)
+  Rendered unis/new.html.erb within layouts/application (183.0ms)
+Completed 200 OK in 218ms (Views: 207.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 19:34:24 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"あ", "location"=>"あ", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (68.0ms)
+  Rendered unis/new.html.erb within layouts/application (134.0ms)
+Completed 200 OK in 172ms (Views: 159.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 19:36:48 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"あ", "location"=>"あ", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (69.0ms)
+  Rendered unis/new.html.erb within layouts/application (354.0ms)
+Completed 200 OK in 464ms (Views: 453.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 19:37:10 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"あ", "location"=>"あ", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (33.0ms)
+  Rendered unis/new.html.erb within layouts/application (142.0ms)
+Completed 200 OK in 212ms (Views: 199.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 19:37:54 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"あ", "location"=>"あ", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (76.0ms)
+  Rendered unis/new.html.erb within layouts/application (180.0ms)
+Completed 200 OK in 213ms (Views: 202.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 19:38:15 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"あ", "location"=>"あ", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (72.0ms)
+  Rendered unis/new.html.erb within layouts/application (145.0ms)
+Completed 200 OK in 189ms (Views: 179.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 19:39:01 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"あ", "location"=>"あ", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/new.html.erb within layouts/application (86.0ms)
+Completed 500 Internal Server Error in 118ms
+
+ActionView::Template::Error (D:/Users/itako/Desktop/system/app/assets/javascripts/unis.js has a invalid UTF-8 byte sequence):
+    1: <%= javascript_include_tag "unis" %>
+    2: 
+    3: <div class="well">
+    4:   <h2>進学試験報告書 編集 [1/4]</h2>
+  app/views/unis/new.html.erb:1:in `_app_views_unis_new_html_erb__316576366_35571528'
+  app/controllers/unis_controller.rb:120:in `block (2 levels) in create'
+  app/controllers/unis_controller.rb:113:in `create'
+
+
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (28.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (11.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (137.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 19:39:11 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"あ", "location"=>"あ", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (17.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/new.html.erb within layouts/application (34.0ms)
+Completed 500 Internal Server Error in 71ms
+
+ActionView::Template::Error (D:/Users/itako/Desktop/system/app/assets/javascripts/unis.js has a invalid UTF-8 byte sequence):
+    1: <%= javascript_include_tag "unis" %>
+    2: 
+    3: <div class="well">
+    4:   <h2>進学試験報告書 編集 [1/4]</h2>
+  app/views/unis/new.html.erb:1:in `_app_views_unis_new_html_erb__316576366_35571528'
+  app/controllers/unis_controller.rb:120:in `block (2 levels) in create'
+  app/controllers/unis_controller.rb:113:in `create'
+
+
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (9.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (75.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 19:39:23 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"あ", "location"=>"あ", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (71.0ms)
+  Rendered unis/new.html.erb within layouts/application (164.0ms)
+Completed 200 OK in 199ms (Views: 187.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 19:39:59 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (77.0ms)
+  Rendered unis/new.html.erb within layouts/application (101.0ms)
+Completed 200 OK in 144ms (Views: 126.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/unis" for 127.0.0.1 at 2013-12-23 19:41:22 +0900
+Processing by UnisController#index as HTML
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered search/_form_uni_simple.html.erb (18.0ms)
+  [1m[36mUni Load (238.0ms)[0m  [1mSELECT "unis".* FROM "unis" ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "unis" 
+  Rendered unis/_index_table.html.erb (1550.1ms)
+  Rendered unis/index.html.erb within layouts/application (1767.1ms)
+Completed 200 OK in 1991ms (Views: 1609.1ms | ActiveRecord: 239.0ms)
+
+
+Started GET "/unis/new" for 127.0.0.1 at 2013-12-23 19:41:29 +0900
+Processing by UnisController#new as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  Rendered unis/_form_uni.html.erb (91.0ms)
+  Rendered unis/new.html.erb within layouts/application (95.0ms)
+Completed 200 OK in 124ms (Views: 118.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/unis/new" for 127.0.0.1 at 2013-12-23 19:42:09 +0900
+Processing by UnisController#new as HTML
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  Rendered unis/_form_uni.html.erb (82.0ms)
+  Rendered unis/new.html.erb within layouts/application (86.0ms)
+Completed 200 OK in 148ms (Views: 143.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/unis/new" for 127.0.0.1 at 2013-12-23 19:42:27 +0900
+Processing by UnisController#new as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  Rendered unis/_form_uni.html.erb (64.0ms)
+  Rendered unis/new.html.erb within layouts/application (68.0ms)
+Completed 200 OK in 95ms (Views: 90.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 19:42:46 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered unis/_form_uni.html.erb (66.0ms)
+  Rendered unis/new.html.erb within layouts/application (69.0ms)
+Completed 200 OK in 105ms (Views: 93.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 19:43:18 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"test", "major"=>"ほげ", "location"=>"長野", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (72.0ms)[0m  [1mINSERT INTO "unis" ("account_id", "advice", "created_at", "glouping", "gmaps", "impression", "latitude", "location", "longitude", "major", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["account_id", 4], ["advice", nil], ["created_at", Mon, 23 Dec 2013 10:43:18 UTC +00:00], ["glouping", true], ["gmaps", nil], ["impression", nil], ["latitude", nil], ["location", "長野"], ["longitude", nil], ["major", "ほげ"], ["name", "test"], ["updated_at", Mon, 23 Dec 2013 10:43:18 UTC +00:00]]
+  [1m[35mSQL (40.0ms)[0m  INSERT INTO "uni_apps" ("created_at", "end", "start", "uni_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Mon, 23 Dec 2013 10:43:18 UTC +00:00], ["end", Mon, 23 Dec 2013], ["start", Mon, 23 Dec 2013], ["uni_id", 96], ["updated_at", Mon, 23 Dec 2013 10:43:18 UTC +00:00]]
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "uni_results" ("created_at", "day", "result", "uni_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Mon, 23 Dec 2013 10:43:18 UTC +00:00], ["day", Mon, 23 Dec 2013], ["result", true], ["uni_id", 96], ["updated_at", Mon, 23 Dec 2013 10:43:18 UTC +00:00]]
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "uni_exams" ("created_at", "end", "start", "uni_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Mon, 23 Dec 2013 10:43:18 UTC +00:00], ["end", Mon, 23 Dec 2013], ["start", Mon, 23 Dec 2013], ["uni_id", 96], ["updated_at", Mon, 23 Dec 2013 10:43:18 UTC +00:00]]
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "uni_submissions" ("created_at", "other", "reason", "reason_details", "recommendation", "result", "survey", "uni_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 23 Dec 2013 10:43:18 UTC +00:00], ["other", ""], ["reason", false], ["reason_details", ""], ["recommendation", false], ["result", false], ["survey", false], ["uni_id", 96], ["updated_at", Mon, 23 Dec 2013 10:43:18 UTC +00:00]]
+  [1m[35m (10.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/unis/96/uni_subjects/new_index
+Completed 302 Found in 700ms (ActiveRecord: 127.0ms)
+
+
+Started GET "/unis/96/uni_subjects/new_index" for 127.0.0.1 at 2013-12-23 19:43:19 +0900
+Processing by UniSubjectsController#new_index as HTML
+  Parameters: {"uni_id"=>"96"}
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mUni Load (21.0ms)[0m  SELECT "unis".* FROM "unis" WHERE "unis"."id" = ? LIMIT 1  [["id", "96"]]
+  [1m[36mUniSubject Load (15.0ms)[0m  [1mSELECT "uni_subjects".* FROM "uni_subjects" WHERE "uni_subjects"."uni_id" = 96[0m
+  Rendered uni_subjects/_index_table.html.erb (140.0ms)
+  Rendered uni_subjects/new_index.html.erb within layouts/application (144.0ms)
+Completed 200 OK in 380ms (Views: 339.0ms | ActiveRecord: 36.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 19:44:39 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni"=>{"name"=>"test", "major"=>"ほげ", "location"=>"長野", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (3.0ms)[0m  [1mINSERT INTO "unis" ("account_id", "advice", "created_at", "glouping", "gmaps", "impression", "latitude", "location", "longitude", "major", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["account_id", 4], ["advice", nil], ["created_at", Mon, 23 Dec 2013 10:44:39 UTC +00:00], ["glouping", true], ["gmaps", nil], ["impression", nil], ["latitude", nil], ["location", "長野"], ["longitude", nil], ["major", "ほげ"], ["name", "test"], ["updated_at", Mon, 23 Dec 2013 10:44:39 UTC +00:00]]
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "uni_apps" ("created_at", "end", "start", "uni_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Mon, 23 Dec 2013 10:44:39 UTC +00:00], ["end", Mon, 23 Dec 2013], ["start", Mon, 23 Dec 2013], ["uni_id", 97], ["updated_at", Mon, 23 Dec 2013 10:44:39 UTC +00:00]]
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "uni_results" ("created_at", "day", "result", "uni_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Mon, 23 Dec 2013 10:44:39 UTC +00:00], ["day", Mon, 23 Dec 2013], ["result", true], ["uni_id", 97], ["updated_at", Mon, 23 Dec 2013 10:44:39 UTC +00:00]]
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "uni_exams" ("created_at", "end", "start", "uni_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Mon, 23 Dec 2013 10:44:39 UTC +00:00], ["end", Mon, 23 Dec 2013], ["start", Mon, 23 Dec 2013], ["uni_id", 97], ["updated_at", Mon, 23 Dec 2013 10:44:39 UTC +00:00]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "uni_submissions" ("created_at", "other", "reason", "reason_details", "recommendation", "result", "survey", "uni_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 23 Dec 2013 10:44:39 UTC +00:00], ["other", ""], ["reason", false], ["reason_details", ""], ["recommendation", false], ["result", false], ["survey", false], ["uni_id", 97], ["updated_at", Mon, 23 Dec 2013 10:44:39 UTC +00:00]]
+  [1m[35m (8.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/unis/97/uni_subjects/new_index
+Completed 302 Found in 36ms (ActiveRecord: 16.0ms)
+
+
+Started GET "/unis/97/uni_subjects/new_index" for 127.0.0.1 at 2013-12-23 19:44:39 +0900
+Processing by UniSubjectsController#new_index as HTML
+  Parameters: {"uni_id"=>"97"}
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mUni Load (1.0ms)[0m  SELECT "unis".* FROM "unis" WHERE "unis"."id" = ? LIMIT 1  [["id", "97"]]
+  [1m[36mUniSubject Load (0.0ms)[0m  [1mSELECT "uni_subjects".* FROM "uni_subjects" WHERE "uni_subjects"."uni_id" = 97[0m
+  Rendered uni_subjects/_index_table.html.erb (2.0ms)
+  Rendered uni_subjects/new_index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 34ms (Views: 30.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/unis/97/uni_subjects/new" for 127.0.0.1 at 2013-12-23 19:45:30 +0900
+Processing by UniSubjectsController#new as HTML
+  Parameters: {"uni_id"=>"97"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered uni_subjects/_form.html.erb (24.0ms)
+  Rendered uni_subjects/new.html.erb within layouts/application (42.0ms)
+Completed 200 OK in 204ms (Views: 66.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/unis/97/uni_subjects" for 127.0.0.1 at 2013-12-23 19:45:40 +0900
+Processing by UniSubjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yg3QVrp05h7DqT2HwS40Cv85eWlxvmfLa3H6h5Ee/Ek=", "uni_subject"=>{"subject"=>"ほげ", "time"=>"5", "details"=>"あ"}, "commit"=>"完了", "uni_id"=>"97"}
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mUni Load (0.0ms)[0m  SELECT "unis".* FROM "unis" WHERE "unis"."id" = ? LIMIT 1  [["id", "97"]]
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (3.0ms)[0m  INSERT INTO "uni_subjects" ("created_at", "details", "subject", "time", "uni_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Mon, 23 Dec 2013 10:45:40 UTC +00:00], ["details", "あ"], ["subject", "ほげ"], ["time", 5], ["uni_id", 97], ["updated_at", Mon, 23 Dec 2013 10:45:40 UTC +00:00]]
+  [1m[36m (5.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/unis/97/uni_subjects/new_index
+Completed 302 Found in 103ms (ActiveRecord: 9.0ms)
+
+
+Started GET "/unis/97/uni_subjects/new_index" for 127.0.0.1 at 2013-12-23 19:45:40 +0900
+Processing by UniSubjectsController#new_index as HTML
+  Parameters: {"uni_id"=>"97"}
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUni Load (0.0ms)[0m  [1mSELECT "unis".* FROM "unis" WHERE "unis"."id" = ? LIMIT 1[0m  [["id", "97"]]
+  [1m[35mUniSubject Load (0.0ms)[0m  SELECT "uni_subjects".* FROM "uni_subjects" WHERE "uni_subjects"."uni_id" = 97
+  Rendered uni_subjects/_index_table.html.erb (5.0ms)
+  Rendered uni_subjects/new_index.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 55ms (Views: 52.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/unis/97/uni_interviews/new" for 127.0.0.1 at 2013-12-23 19:45:44 +0900
+Processing by UniInterviewsController#new as HTML
+  Parameters: {"uni_id"=>"97"}
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered uni_interviews/_form.html.erb (28.0ms)
+  Rendered uni_interviews/new.html.erb within layouts/application (42.0ms)
+Completed 200 OK in 147ms (Views: 94.0ms | ActiveRecord: 0.0ms)

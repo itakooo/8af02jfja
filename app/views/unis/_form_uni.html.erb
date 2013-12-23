@@ -3,7 +3,7 @@
 <%= form_for(@uni, :html => {:class => "form-horizontal"}) do |f| %>
   <% if @uni.errors.any? %>
     <div id="error_explanation">
-      <h2>基本情報に関して、以下の項目を修正してください</h2>
+      <h2>基本情報に関して、以下の項目を修正してください。</h2>
 
       <ul>
       <% @uni.errors.full_messages.each do |msg| %>
@@ -15,7 +15,7 @@
   
   <% if @uni.uni_submission.errors.any? %>
     <div id="error_explanation">
-      <h2>提出書類に関して、以下の項目を修正してください</h2>
+      <h2>提出書類に関して、以下の項目を修正してください。</h2>
 
       <ul>
       <% @uni.uni_submission.errors.full_messages.each do |msg| %>

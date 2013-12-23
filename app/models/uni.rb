@@ -9,9 +9,9 @@ class Uni < ActiveRecord::Base
   has_many :uni_subjects  # 試験科目(複数)
   has_one :uni_interview  # 進学面接
   has_one :draw
-  attr_accessible :location, :gmaps, :latitude, :longitude, :name, :major, :glouping, :impression, :advice
+  #attr_accessible :location, :gmaps, :latitude, :longitude, :name, :major, :glouping, :impression, :advice
 
-  acts_as_gmappable
+  #acts_as_gmappable :message => "正しい場所を入力してください"
 
   validates :name,
 		:presence => { :message => 'は必須です' },
@@ -35,6 +35,7 @@ class Uni < ActiveRecord::Base
   validates :advice,
     :length => { :maximum => 2000, :allow_blank => true,
                  :message => 'は2000文字以内にしてください'}
+  
 
   # アドレス生成に使うカラムを指定
   def gmaps4rails_address

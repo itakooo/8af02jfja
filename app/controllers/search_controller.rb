@@ -41,11 +41,12 @@ class SearchController < ApplicationController
     if @glouping != nil
       @emps = Emp.where("name LIKE ? AND location LIKE ? AND glouping == ?",
         "%#{@name}%","%#{@location}%",@glouping).
-        order("created_at DESC").paginate(:page => params[:page],:per_page => 20)
+        order("created_at DESC").page(params[:page]).per(10)
+
     else
       @emps = Emp.where("name LIKE ? AND location LIKE ?",
         "%#{@name}%","%#{@location}%").
-        order("created_at DESC").paginate(:page => params[:page],:per_page => 20)
+        order("created_at DESC").page(params[:page]).per(10)
     end
     #render :text => params[:glouping]
     render :action => "result_emp"
@@ -79,11 +80,11 @@ class SearchController < ApplicationController
     if @glouping != nil
       @unis = Uni.where("name LIKE ? AND location LIKE ? AND glouping == ? AND major LIKE ?",
         "%#{@name}%","%#{@location}%",@glouping,"%#{@major}%").
-        order("created_at DESC").paginate(:page => params[:page],:per_page => 20)
+        order("created_at DESC").page(params[:page]).per(10)
     else
       @unis = Uni.where("name LIKE ? AND location LIKE ? AND major LIKE ?",
         "%#{@name}%","%#{@location}%","%#{@major}%").
-        order("created_at DESC").paginate(:page => params[:page],:per_page => 20)
+        order("created_at DESC").page(params[:page]).per(10)
     end
     
     #科目名でOR検索

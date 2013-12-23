@@ -1457,7 +1457,7 @@ select:focus:required:invalid:focus {
 .help-block {
   display: block;
   margin-bottom: 10px;
-  color: #dc143c;
+  color: #595959;
 }
 
 .help-inline {
