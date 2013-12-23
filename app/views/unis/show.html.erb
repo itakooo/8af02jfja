@@ -89,6 +89,7 @@
         <tr><td>後輩へのアドバイス</td><td colspan=3><%= simple_format(@uni.advice) %></td></tr>
     </tbody>
 </table>
+  
   <% strary = @uni.draw.txt.split(/&&/) %>
   <div id = "jquery-ui-view" class = "ui-widget-content">
 	<% padding = 0 %>
@@ -145,7 +146,7 @@
     <% end %>
 	
   </div>
-<br/>
-<!-- <div align="center"><p>地図</p></div> -->
-<!-- <%= gmaps("map_options" => { "detect_location" => false,  "center_on_user" => true, "auto_zoom" => false, "zoom" => 13},"markers" => { "data" => @json }) %> -->
-<!-- </div> -->
+  <br />
+  <!-- <div align="center"><p>地図</p></div> -->
+<%= gmaps("map_options" => { "detect_location" => false,  "center_on_user" => true, "auto_zoom" => false, "zoom" => 13},"markers" => { "data" => @json }) %>
+</div>

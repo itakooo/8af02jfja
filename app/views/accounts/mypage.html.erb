@@ -45,7 +45,7 @@
       <td><%= emp.created_at.strftime("%Y年%m月%d日") %>
       <% if emp.account.id == session[:usr] %>
           <td style="text-align:center;", width="35"><%= link_to '編集', edit_emp_path(emp), :style=>"background-color: transparent;" %></td>
-          <td style="text-align:center;", width="35"><%= link_to '消去', emp, method: :delete, :style=>"background-color: transparent;" %></td>
+          <td style="text-align:center;", width="35"><%= link_to '消去', emp, method: :delete, :style=>"background-color: transparent;", :confirm => "本当に削除しますか？"  %></td>
       <% end %>
     </tr>
     </tbody>
@@ -90,7 +90,7 @@
       <td><%= uni.created_at.strftime("%Y年%m月%d日") %>
       <% if uni.account.id == session[:usr] %>
           <td style="text-align:center;", width="35"><%= link_to '編集', edit_uni_path(uni), :style=>"background-color: transparent;" %></td>
-          <td style="text-align:center;", width="35"><%= link_to '削除', uni, method: :delete, :style=>"background-color: transparent;" %></td>
+          <td style="text-align:center;", width="35"><%= link_to '削除', uni, method: :delete, :style=>"background-color: transparent;", :confirm=>'本当に削除しますか？' %></td>
       <% end %>
     </tr>
   <% end %>

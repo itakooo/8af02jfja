@@ -9,9 +9,9 @@ class Uni < ActiveRecord::Base
   has_many :uni_subjects  # 試験科目(複数)
   has_one :uni_interview  # 進学面接
   has_one :draw
-  #attr_accessible :location, :gmaps, :latitude, :longitude, :name, :major, :glouping, :impression, :advice
+  attr_accessible :location, :gmaps, :latitude, :longitude, :name, :major, :glouping, :impression, :advice
 
-  #acts_as_gmappable :message => "正しい場所を入力してください"
+  acts_as_gmappable
 
   validates :name,
 		:presence => { :message => 'は必須です' },

@@ -250,7 +250,7 @@ class EmpsController < ApplicationController
     @emp.destroy
 
     respond_to do |format|
-      format.html { redirect_to emps_url }
+      format.html { redirect_to mypage_accounts_path }
       format.json { head :no_content }
     end
   end

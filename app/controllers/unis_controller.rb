@@ -193,7 +193,8 @@ class UnisController < ApplicationController
     @uni.destroy
 
     respond_to do |format|
-      format.html { redirect_to unis_url }
+      #format.html { redirect_to unis_url }
+      format.html { redirect_to mypage_accounts_path }
       format.json { head :no_content }
     end
   end
