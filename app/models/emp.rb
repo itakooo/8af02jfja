@@ -10,7 +10,7 @@ class Emp < ActiveRecord::Base
 
   acts_as_gmappable
 
-  attr_accessible :location, :gmaps, :latitude, :longitude, :name, :major, :glouping, :impression, :advice, :entrysheet
+  attr_accessible :location, :gmaps, :latitude, :longitude, :name, :major, :glouping, :impression, :advice, :entrysheet, :submit
   
   validates :name,
     :presence => { :message => 'は必須です' },

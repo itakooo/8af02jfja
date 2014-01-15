@@ -3,10 +3,10 @@ class ApplicationController < ActionController::Base
   # 例外ハンドル
   # ルーティングエラーと、データが見つからない場合は404エラー扱い
   rescue_from ActionController::RoutingError, ActiveRecord::RecordNotFound,
-  :with => :render_404# if Rails.env.production?
+  :with => :render_404 if Rails.env.production?
 
   # その他は500エラー
-  rescue_from Exception, :with => :render_500# if Rails.env.production?
+  rescue_from Exception, :with => :render_500 if Rails.env.production?
 
   # 500エラーはログをとり /public/500.html を表示
   def render_500(exception = nil)
@@ -27,6 +27,9 @@ class ApplicationController < ActionController::Base
     render :file => "#{Rails.root}/public/404.html", :status => 404,
     :content_type => 'text/html'
   end
+
+  # Basic認証
+  http_basic_authenticate_with :name => "hoge", :password => "huga"
 
 
   protect_from_forgery

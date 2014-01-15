@@ -7751,3 +7751,1682 @@ Started GET "/" for 127.0.0.1 at 2013-12-23 21:35:30 +0900
 Processing by TopController#index as HTML
   Rendered top/index.html.erb within layouts/application (1.0ms)
 Completed 200 OK in 56ms (Views: 56.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/mypage" for 127.0.0.1 at 2013-12-23 22:53:56 +0900
+
+SyntaxError (D:/Users/itako/Desktop/system/app/models/account.rb:27: syntax error, unexpected tASSOC, expecting keyword_end
+		:length => { :minimum => 4, :message =>...
+		          ^):
+  app/controllers/accounts_controller.rb:3:in `<top (required)>'
+
+
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (39.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (36.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (266.0ms)
+
+
+Started GET "/accounts/mypage" for 127.0.0.1 at 2013-12-23 22:54:25 +0900
+Processing by AccountsController#mypage as HTML
+  [1m[36mAccount Load (14.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "emps" WHERE (account_id == 4) LIMIT 20 OFFSET 0) subquery_for_count [0m
+  [1m[35mEmp Load (15.0ms)[0m  SELECT "emps".* FROM "emps" WHERE (account_id == 4) ORDER BY created_at DESC LIMIT 20 OFFSET 0
+  [1m[36mAccount Load (1.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 35
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 34
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (1.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 33
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 32
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 31
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "emps" WHERE (account_id == 4)[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "unis" WHERE (account_id == 4) LIMIT 20 OFFSET 0) subquery_for_count 
+  [1m[36mUni Load (19.0ms)[0m  [1mSELECT "unis".* FROM "unis" WHERE (account_id == 4) ORDER BY created_at DESC LIMIT 20 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "unis" WHERE (account_id == 4)
+  Rendered accounts/mypage.html.erb within layouts/application (801.0ms)
+Completed 200 OK in 1417ms (Views: 955.1ms | ActiveRecord: 68.0ms)
+
+
+Started GET "/accounts/4/edit" for 127.0.0.1 at 2013-12-23 22:54:31 +0900
+Processing by AccountsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", "4"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", "4"]]
+  Rendered accounts/edit.html.erb within layouts/application (305.0ms)
+Rendering 500 with exception: D:/Users/itako/Desktop/system/app/assets/javascripts/error.js has a invalid UTF-8 byte sequence
+DEPRECATION WARNING: Passing the format in the template name is deprecated. Please pass render with :formats => [:html] instead. (called from realtime at C:/Ruby193/lib/ruby/1.9.1/benchmark.rb:295)
+  Rendered public/500.html within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 427ms (Views: 100.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/4/edit" for 127.0.0.1 at 2013-12-23 22:55:05 +0900
+Processing by AccountsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", "4"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", "4"]]
+  Rendered accounts/edit.html.erb within layouts/application (13.0ms)
+Completed 500 Internal Server Error in 45ms
+
+ActionView::Template::Error (D:/Users/itako/Desktop/system/app/assets/javascripts/error.js has a invalid UTF-8 byte sequence):
+    1: <%= javascript_include_tag "error" %>
+    2: 
+    3: <div class="row-fluid">
+    4:   <div class="span2"></div>
+  app/views/accounts/edit.html.erb:1:in `_app_views_accounts_edit_html_erb___177705464_34688220'
+
+
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (10.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (74.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (159.0ms)
+
+
+Started GET "/accounts/4/edit" for 127.0.0.1 at 2013-12-23 22:55:44 +0900
+Processing by AccountsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", "4"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", "4"]]
+  Rendered accounts/_form.html.erb (72.0ms)
+  Rendered accounts/edit.html.erb within layouts/application (547.0ms)
+Completed 200 OK in 576ms (Views: 573.0ms | ActiveRecord: 0.0ms)
+
+
+Started PUT "/accounts/4" for 127.0.0.1 at 2013-12-23 22:55:50 +0900
+Processing by AccountsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FLfxQpymCA6PgeeOAKtvURZNSrPkld3pjgwPCusTxGI=", "account"=>{"student_id"=>"09411", "name"=>"tk", "major"=>"4", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録", "id"=>"4"}
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", "4"]]
+  [1m[35m (11.0ms)[0m  begin transaction
+  [1m[36mAccount Exists (0.0ms)[0m  [1mSELECT 1 FROM "accounts" WHERE ("accounts"."student_id" = '09411' AND "accounts"."id" != 4) LIMIT 1[0m
+  [1m[35m (2.0ms)[0m  UPDATE "accounts" SET "password" = 'da39a3ee5e6b4b0d3255bfef95601890afd80709', "updated_at" = '2013-12-23 13:55:51.599963' WHERE "accounts"."id" = 4
+  [1m[36m (7.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/accounts/4
+Completed 302 Found in 1137ms (ActiveRecord: 21.0ms)
+
+
+Started GET "/accounts/4" for 127.0.0.1 at 2013-12-23 22:55:51 +0900
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", "4"]]
+  Rendered accounts/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 53ms (Views: 47.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2013-12-23 22:56:47 +0900
+Processing by AccountsController#new as HTML
+  Rendered accounts/_form.html.erb (9.0ms)
+  Rendered accounts/new.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 38ms (Views: 37.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2013-12-23 22:57:13 +0900
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FLfxQpymCA6PgeeOAKtvURZNSrPkld3pjgwPCusTxGI=", "account"=>{"student_id"=>"00001", "name"=>"a", "major"=>"1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mAccount Exists (0.0ms)[0m  SELECT 1 FROM "accounts" WHERE "accounts"."student_id" = '00001' LIMIT 1
+Binary data inserted for `string` type on column `password`
+  [1m[36mSQL (40.0ms)[0m  [1mINSERT INTO "accounts" ("admin", "created_at", "major", "name", "password", "student_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["admin", nil], ["created_at", Mon, 23 Dec 2013 13:57:13 UTC +00:00], ["major", 1], ["name", "a"], ["password", "da39a3ee5e6b4b0d3255bfef95601890afd80709"], ["student_id", "00001"], ["updated_at", Mon, 23 Dec 2013 13:57:13 UTC +00:00]]
+  [1m[35m (5.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/accounts/19
+Completed 302 Found in 83ms (ActiveRecord: 45.0ms)
+
+
+Started GET "/accounts/19" for 127.0.0.1 at 2013-12-23 22:57:13 +0900
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mAccount Load (1.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", "19"]]
+  Rendered accounts/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 29ms (Views: 27.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2013-12-23 22:57:45 +0900
+Processing by AccountsController#new as HTML
+  Rendered accounts/_form.html.erb (9.0ms)
+  Rendered accounts/new.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 53ms (Views: 36.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2013-12-23 22:57:55 +0900
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FLfxQpymCA6PgeeOAKtvURZNSrPkld3pjgwPCusTxGI=", "account"=>{"student_id"=>"00002", "name"=>"a", "major"=>"1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mAccount Exists (1.0ms)[0m  [1mSELECT 1 FROM "accounts" WHERE "accounts"."student_id" = '00002' LIMIT 1[0m
+Binary data inserted for `string` type on column `password`
+  [1m[35mSQL (4.0ms)[0m  INSERT INTO "accounts" ("admin", "created_at", "major", "name", "password", "student_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["admin", nil], ["created_at", Mon, 23 Dec 2013 13:57:55 UTC +00:00], ["major", 1], ["name", "a"], ["password", "da39a3ee5e6b4b0d3255bfef95601890afd80709"], ["student_id", "00002"], ["updated_at", Mon, 23 Dec 2013 13:57:55 UTC +00:00]]
+  [1m[36m (8.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/accounts/20
+Completed 302 Found in 25ms (ActiveRecord: 13.0ms)
+
+
+Started GET "/accounts/20" for 127.0.0.1 at 2013-12-23 22:57:55 +0900
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", "20"]]
+  Rendered accounts/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 28ms (Views: 24.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2013-12-23 22:58:53 +0900
+
+SyntaxError (D:/Users/itako/Desktop/system/app/models/account.rb:32: syntax error, unexpected '\n', expecting tASSOC):
+  app/controllers/accounts_controller.rb:3:in `<top (required)>'
+
+
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (8.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (40.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2013-12-23 22:59:12 +0900
+Processing by AccountsController#new as HTML
+  Rendered accounts/_form.html.erb (11.0ms)
+  Rendered accounts/new.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 97ms (Views: 79.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2013-12-23 22:59:17 +0900
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FLfxQpymCA6PgeeOAKtvURZNSrPkld3pjgwPCusTxGI=", "account"=>{"student_id"=>"", "name"=>"", "major"=>"1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  rollback transaction
+  Rendered accounts/_form.html.erb (9.0ms)
+  Rendered accounts/new.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 85ms (Views: 37.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2013-12-23 23:00:06 +0900
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FLfxQpymCA6PgeeOAKtvURZNSrPkld3pjgwPCusTxGI=", "account"=>{"student_id"=>"", "name"=>"", "major"=>"1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  rollback transaction
+  Rendered accounts/_form.html.erb (43.0ms)
+  Rendered accounts/new.html.erb within layouts/application (48.0ms)
+Completed 200 OK in 123ms (Views: 119.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/accounts/mypage" for 127.0.0.1 at 2013-12-23 23:01:39 +0900
+Processing by AccountsController#mypage as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "emps" WHERE (account_id == 4) LIMIT 20 OFFSET 0) subquery_for_count [0m
+  [1m[35mEmp Load (1.0ms)[0m  SELECT "emps".* FROM "emps" WHERE (account_id == 4) ORDER BY created_at DESC LIMIT 20 OFFSET 0
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (21.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 35
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (1.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 34
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (1.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 33
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 32
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 31
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "emps" WHERE (account_id == 4)[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "unis" WHERE (account_id == 4) LIMIT 20 OFFSET 0) subquery_for_count 
+  [1m[36mUni Load (2.0ms)[0m  [1mSELECT "unis".* FROM "unis" WHERE (account_id == 4) ORDER BY created_at DESC LIMIT 20 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "unis" WHERE (account_id == 4)
+  Rendered accounts/mypage.html.erb within layouts/application (395.0ms)
+Completed 200 OK in 528ms (Views: 401.0ms | ActiveRecord: 29.0ms)
+
+
+Started GET "/emps" for 127.0.0.1 at 2013-12-23 23:01:43 +0900
+Processing by EmpsController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered search/_form_emp_simple.html.erb (2.0ms)
+  [1m[35mEmp Load (1.0ms)[0m  SELECT "emps".* FROM "emps" ORDER BY created_at DESC LIMIT 10 OFFSET 0
+  [1m[36mAccount Load (1.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 35
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 34
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 33
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 32
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 31
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 1 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 29
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 1 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 28
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 1 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 27
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 1 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 26
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 1 LIMIT 1[0m
+  [1m[35mEmpSelection Load (1.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 25
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "emps" [0m
+  Rendered emps/_index_table.html.erb (92.0ms)
+  Rendered emps/index.html.erb within layouts/application (120.0ms)
+Completed 200 OK in 185ms (Views: 179.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/emps" for 127.0.0.1 at 2013-12-23 23:01:50 +0900
+Processing by EmpsController#index as HTML
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered search/_form_emp_simple.html.erb (2.0ms)
+  [1m[36mEmp Load (1.0ms)[0m  [1mSELECT "emps".* FROM "emps" ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mEmpSelection Load (1.0ms)[0m  [1mSELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 35[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mEmpSelection Load (0.0ms)[0m  [1mSELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 34[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mEmpSelection Load (1.0ms)[0m  [1mSELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 33[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mEmpSelection Load (0.0ms)[0m  [1mSELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 32[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mEmpSelection Load (0.0ms)[0m  [1mSELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 31[0m
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 1 LIMIT 1
+  [1m[36mEmpSelection Load (1.0ms)[0m  [1mSELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 29[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 1 LIMIT 1
+  [1m[36mEmpSelection Load (1.0ms)[0m  [1mSELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 28[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 1 LIMIT 1
+  [1m[36mEmpSelection Load (1.0ms)[0m  [1mSELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 27[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 1 LIMIT 1
+  [1m[36mEmpSelection Load (0.0ms)[0m  [1mSELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 26[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 1 LIMIT 1
+  [1m[36mEmpSelection Load (1.0ms)[0m  [1mSELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 25[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "emps" 
+  Rendered emps/_index_table.html.erb (54.0ms)
+  Rendered emps/index.html.erb within layouts/application (65.0ms)
+Completed 200 OK in 91ms (Views: 81.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/accounts/mypage" for 127.0.0.1 at 2013-12-23 23:03:02 +0900
+Processing by AccountsController#mypage as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "emps" WHERE (account_id == 4) LIMIT 20 OFFSET 0) subquery_for_count [0m
+  [1m[35mEmp Load (1.0ms)[0m  SELECT "emps".* FROM "emps" WHERE (account_id == 4) ORDER BY created_at DESC LIMIT 20 OFFSET 0
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (1.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 35
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 34
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 33
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 32
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (1.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 31
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "emps" WHERE (account_id == 4)[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "unis" WHERE (account_id == 4) LIMIT 20 OFFSET 0) subquery_for_count 
+  [1m[36mUni Load (2.0ms)[0m  [1mSELECT "unis".* FROM "unis" WHERE (account_id == 4) ORDER BY created_at DESC LIMIT 20 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "unis" WHERE (account_id == 4)
+  Rendered accounts/mypage.html.erb within layouts/application (129.0ms)
+Completed 200 OK in 195ms (Views: 182.0ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/emps/new" for 127.0.0.1 at 2013-12-23 23:03:06 +0900
+Processing by EmpsController#new as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  Rendered emps/_form.html.erb (164.0ms)
+  Rendered emps/new.html.erb within layouts/application (198.0ms)
+Completed 200 OK in 322ms (Views: 223.0ms | ActiveRecord: 5.0ms)
+
+
+Started POST "/emps" for 127.0.0.1 at 2013-12-23 23:03:10 +0900
+Processing by EmpsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FLfxQpymCA6PgeeOAKtvURZNSrPkld3pjgwPCusTxGI=", "emp"=>{"name"=>"", "location"=>"", "glouping"=>"true", "submit(1i)"=>"2013", "submit(2i)"=>"12", "submit(3i)"=>"23", "entrysheet"=>""}, "emp_submission"=>{"graduate"=>"0", "result"=>"0", "resume"=>"0", "recommendation"=>"0", "medical"=>"0", "other"=>""}, "emp_briefing"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "location"=>"", "details"=>""}, "emp_webtest"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "location"=>"", "details"=>""}, "commit"=>"次へ"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+Completed 500 Internal Server Error in 3ms
+
+ActiveModel::MassAssignmentSecurity::Error (Can't mass-assign protected attributes: submit(1i), submit(2i), submit(3i)):
+  app/controllers/emps_controller.rb:119:in `new'
+  app/controllers/emps_controller.rb:119:in `create'
+
+
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (8.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (42.0ms)
+
+
+Started POST "/emps" for 127.0.0.1 at 2013-12-23 23:03:25 +0900
+Processing by EmpsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FLfxQpymCA6PgeeOAKtvURZNSrPkld3pjgwPCusTxGI=", "emp"=>{"name"=>"", "location"=>"", "glouping"=>"true", "submit(1i)"=>"2013", "submit(2i)"=>"12", "submit(3i)"=>"23", "entrysheet"=>""}, "emp_submission"=>{"graduate"=>"0", "result"=>"0", "resume"=>"0", "recommendation"=>"0", "medical"=>"0", "other"=>""}, "emp_briefing"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "location"=>"", "details"=>""}, "emp_webtest"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "location"=>"", "details"=>""}, "commit"=>"次へ"}
+  [1m[36mAccount Load (1.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+You must provide an address
+  Rendered emps/_form.html.erb (32.0ms)
+  Rendered emps/new.html.erb within layouts/application (35.0ms)
+Completed 200 OK in 626ms (Views: 112.0ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/unis/new" for 127.0.0.1 at 2013-12-23 23:03:35 +0900
+Processing by UnisController#new as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  Rendered unis/_form_uni.html.erb (82.0ms)
+  Rendered unis/new.html.erb within layouts/application (130.0ms)
+Completed 200 OK in 313ms (Views: 154.0ms | ActiveRecord: 7.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2013-12-23 23:03:40 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FLfxQpymCA6PgeeOAKtvURZNSrPkld3pjgwPCusTxGI=", "uni"=>{"name"=>"", "major"=>"", "location"=>"", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_app"=>{"start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"23", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"23"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+You must provide an address
+  Rendered unis/_form_uni.html.erb (72.0ms)
+  Rendered unis/new.html.erb within layouts/application (77.0ms)
+Completed 200 OK in 127ms (Views: 100.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/emps/new" for 127.0.0.1 at 2013-12-23 23:04:41 +0900
+Processing by EmpsController#new as HTML
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  Rendered emps/_form.html.erb (27.0ms)
+  Rendered emps/new.html.erb within layouts/application (86.0ms)
+Completed 200 OK in 126ms (Views: 112.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/emps" for 127.0.0.1 at 2013-12-23 23:04:46 +0900
+Processing by EmpsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FLfxQpymCA6PgeeOAKtvURZNSrPkld3pjgwPCusTxGI=", "emp"=>{"name"=>"", "location"=>"", "glouping"=>"true", "submit(1i)"=>"2013", "submit(2i)"=>"12", "submit(3i)"=>"23", "entrysheet"=>""}, "emp_submission"=>{"graduate"=>"0", "result"=>"0", "resume"=>"0", "recommendation"=>"0", "medical"=>"0", "other"=>""}, "emp_briefing"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "location"=>"", "details"=>""}, "emp_webtest"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"23", "location"=>"", "details"=>""}, "commit"=>"次へ"}
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+You must provide an address
+  Rendered emps/_form.html.erb (60.0ms)
+  Rendered emps/new.html.erb within layouts/application (64.0ms)
+Completed 200 OK in 99ms (Views: 88.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/accounts/mypage" for 127.0.0.1 at 2013-12-23 23:05:16 +0900
+Processing by AccountsController#mypage as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "emps" WHERE (account_id == 4) LIMIT 20 OFFSET 0) subquery_for_count [0m
+  [1m[35mEmp Load (0.0ms)[0m  SELECT "emps".* FROM "emps" WHERE (account_id == 4) ORDER BY created_at DESC LIMIT 20 OFFSET 0
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 35
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 34
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (1.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 33
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (1.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 32
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 31
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "emps" WHERE (account_id == 4)[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "unis" WHERE (account_id == 4) LIMIT 20 OFFSET 0) subquery_for_count 
+  [1m[36mUni Load (2.0ms)[0m  [1mSELECT "unis".* FROM "unis" WHERE (account_id == 4) ORDER BY created_at DESC LIMIT 20 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "unis" WHERE (account_id == 4)
+  Rendered accounts/mypage.html.erb within layouts/application (268.0ms)
+Completed 200 OK in 302ms (Views: 289.0ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/accounts/4/edit" for 127.0.0.1 at 2013-12-23 23:05:19 +0900
+Processing by AccountsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", "4"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", "4"]]
+  Rendered accounts/_form.html.erb (9.0ms)
+  Rendered accounts/edit.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 41ms (Views: 35.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/mypage" for 127.0.0.1 at 2013-12-23 23:12:07 +0900
+Processing by AccountsController#mypage as HTML
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "emps" WHERE (account_id == 4) LIMIT 20 OFFSET 0) subquery_for_count 
+  [1m[36mEmp Load (0.0ms)[0m  [1mSELECT "emps".* FROM "emps" WHERE (account_id == 4) ORDER BY created_at DESC LIMIT 20 OFFSET 0[0m
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mEmpSelection Load (0.0ms)[0m  [1mSELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 35[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mEmpSelection Load (0.0ms)[0m  [1mSELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 34[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mEmpSelection Load (0.0ms)[0m  [1mSELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 33[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mEmpSelection Load (0.0ms)[0m  [1mSELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 32[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mEmpSelection Load (0.0ms)[0m  [1mSELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 31[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "emps" WHERE (account_id == 4)
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "unis" WHERE (account_id == 4) LIMIT 20 OFFSET 0) subquery_for_count [0m
+  [1m[35mUni Load (2.0ms)[0m  SELECT "unis".* FROM "unis" WHERE (account_id == 4) ORDER BY created_at DESC LIMIT 20 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "unis" WHERE (account_id == 4)[0m
+  Rendered accounts/mypage.html.erb within layouts/application (162.0ms)
+Completed 200 OK in 191ms (Views: 182.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/accounts/4/edit" for 127.0.0.1 at 2013-12-23 23:12:11 +0900
+Processing by AccountsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", "4"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", "4"]]
+  Rendered accounts/_form_edit.html.erb (1.0ms)
+  Rendered accounts/edit.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 17ms
+
+ActionView::Template::Error (Your template was not saved as valid UTF-8. Please either specify UTF-8 as the encoding for your template in your text editor, or mark the template with its encoding by inserting the following as the first line of the template:
+
+# encoding: <name of correct encoding>.
+
+The source of your template was:
+
+<%= form_for(@account,:html => {:class => "form-horizontal"}) do |f| %>
+  <% if @account.errors.any? %>
+    <div id="error_explanation">
+      <h2> �ȉ��̍��ڂ��C�����Ă�������</h2>
+
+      <ul>
+      <% @account.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :�w�Дԍ�,{:class => "control-label"} %>
+    <div class="controls">
+        <%= f.text_field :student_id, :style=>"width:40px" :class=>"disabled" %>
+        <p class="help-block">���K�{ 5�����̔��p����</p>
+    </div>
+  </div>
+  
+  <div class="control-group">
+    <%= f.label :���O,{:class => "control-label"} %>
+    <div class="controls">
+        <%= f.text_field :name, :style=>"width:100px" %>        
+        <p class="help-block">���K�{</p>
+    </div>
+  </div>
+  
+  <div class="control-group">
+    <%= f.label :�w��,{:class => "control-label"} %>
+    <div class="controls">
+      <%= f.select( :major, 
+            {'M' => 1, 'E' => 2, 'S' => 3, 'J' => 4, 'C' => 5},
+            {},:style=>"width:50px")%>
+      <p class="help-block">���K�{</p>
+    </div>
+  </div>
+  
+  <div class="control-group">
+		<%= f.label :�p�X���[�h,{:class => "control-label"} %>
+    <div class="controls">
+      <%= f.password_field :password, :style=>"width:100px" %>
+      <p class="help-block">���K�{</p>
+    </div>
+  </div>
+  
+  <div class="control-group">
+		<%= f.label :�p�X���[�h�i�m�F�p�j,{:class => "control-label"} %>
+    <div class="controls">
+      <%= f.password_field :password_confirmation, :style=>"width:100px"%>
+      <p class="help-block">���K�{</p>
+    </div>
+  </div>
+  
+  <div class="form-actions" style="background-color: transparent;">
+    <%= f.submit '�o�^', {:class => "btn btn-primary"} %>
+  </div>
+  
+<% end %>
+):
+  app/views/accounts/edit.html.erb:9:in `_app_views_accounts_edit_html_erb___177705464_32552412'
+
+
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (11.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (56.0ms)
+
+
+Started GET "/accounts/4/edit" for 127.0.0.1 at 2013-12-23 23:12:22 +0900
+Processing by AccountsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAccount Load (1.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", "4"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", "4"]]
+ERROR: compiling _app_views_accounts__form_edit_html_erb__280521580_35123616 RAISED D:/Users/itako/Desktop/system/app/views/accounts/_form_edit.html.erb:17: syntax error, unexpected ':', expecting ')'
+...dent_id, :style=>"width:40px" :class=>"disabled" );@output_b...
+...                               ^
+Function body:           def _app_views_accounts__form_edit_html_erb__280521580_35123616(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "accounts/_form_edit";_old_output_buffer = @output_buffer;form_edit = local_assigns[:form_edit];;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.append=  form_for(@account,:html => {:class => "form-horizontal"}) do |f| @output_buffer.safe_concat('
+');   if @account.errors.any? 
+@output_buffer.safe_concat('    <div id="error_explanation">
+      <h2> 以下の項目を修正してください</h2>
+
+      <ul>
+');       @account.errors.full_messages.each do |msg| 
+@output_buffer.safe_concat('        <li>');@output_buffer.append= ( msg );@output_buffer.safe_concat('</li>
+');       end 
+@output_buffer.safe_concat('      </ul>
+    </div>
+');   end 
+@output_buffer.safe_concat('
+  <div class="control-group">
+    ');@output_buffer.append= ( f.label :学籍番号,{:class => "control-label"} );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    <div class="controls">
+        ');@output_buffer.append= ( f.text_field :student_id, :style=>"width:40px" :class=>"disabled" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('        <p class="help-block">※必須 5文字の半角数字</p>
+    </div>
+  </div>
+  
+  <div class="control-group">
+    ');@output_buffer.append= ( f.label :名前,{:class => "control-label"} );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    <div class="controls">
+        ');@output_buffer.append= ( f.text_field :name, :style=>"width:100px" );@output_buffer.safe_concat('        
+');@output_buffer.safe_concat('        <p class="help-block">※必須</p>
+    </div>
+  </div>
+  
+  <div class="control-group">
+    ');@output_buffer.append= ( f.label :学科,{:class => "control-label"} );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    <div class="controls">
+      ');@output_buffer.append= ( f.select( :major, 
+            {'M' => 1, 'E' => 2, 'S' => 3, 'J' => 4, 'C' => 5},
+            {},:style=>"width:50px"));@output_buffer.safe_concat('
+');@output_buffer.safe_concat('      <p class="help-block">※必須</p>
+    </div>
+  </div>
+  
+  <div class="control-group">
+		');@output_buffer.append= ( f.label :パスワード,{:class => "control-label"} );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    <div class="controls">
+      ');@output_buffer.append= ( f.password_field :password, :style=>"width:100px" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('      <p class="help-block">※必須</p>
+    </div>
+  </div>
+  
+  <div class="control-group">
+		');@output_buffer.append= ( f.label :パスワード（確認用）,{:class => "control-label"} );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    <div class="controls">
+      ');@output_buffer.append= ( f.password_field :password_confirmation, :style=>"width:100px");@output_buffer.safe_concat('
+');@output_buffer.safe_concat('      <p class="help-block">※必須</p>
+    </div>
+  </div>
+  
+  <div class="form-actions" style="background-color: transparent;">
+    ');@output_buffer.append= ( f.submit '登録', {:class => "btn btn-primary"} );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  
+'); end 
+@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/template.rb:285:in `module_eval'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/template.rb:285:in `compile'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/template.rb:233:in `compile!'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/template.rb:142:in `block in render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/notifications.rb:125:in `instrument'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/template.rb:141:in `render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/renderer/partial_renderer.rb:257:in `render_partial'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/renderer/partial_renderer.rb:230:in `block in render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/notifications.rb:123:in `block in instrument'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/notifications.rb:123:in `instrument'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/renderer/partial_renderer.rb:229:in `render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/renderer/renderer.rb:41:in `render_partial'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/helpers/rendering_helper.rb:27:in `render'
+D:/Users/itako/Desktop/system/app/views/accounts/edit.html.erb:9:in `_app_views_accounts_edit_html_erb___177705464_32552412'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/template.rb:143:in `block in render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/notifications.rb:125:in `instrument'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/template.rb:141:in `render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/renderer/template_renderer.rb:42:in `block (2 levels) in render_template'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/notifications.rb:123:in `block in instrument'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/notifications.rb:123:in `instrument'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/renderer/template_renderer.rb:41:in `block in render_template'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/renderer/template_renderer.rb:49:in `render_with_layout'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/renderer/template_renderer.rb:40:in `render_template'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/renderer/template_renderer.rb:13:in `render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/renderer/renderer.rb:36:in `render_template'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_view/renderer/renderer.rb:17:in `render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/abstract_controller/rendering.rb:109:in `_render_template'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/abstract_controller/rendering.rb:88:in `render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/rendering.rb:16:in `render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+C:/Ruby193/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activerecord-3.2.2/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/instrumentation.rb:39:in `render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/abstract_controller/base.rb:167:in `process_action'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/rendering.rb:10:in `process_action'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/callbacks.rb:436:in `_run__917779047__process_action__213779652__callbacks'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/callbacks.rb:405:in `__run_callback'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/callbacks.rb:81:in `run_callbacks'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/abstract_controller/callbacks.rb:17:in `process_action'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/rescue.rb:29:in `process_action'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/notifications.rb:123:in `block in instrument'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/notifications.rb:123:in `instrument'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/params_wrapper.rb:205:in `process_action'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activerecord-3.2.2/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/abstract_controller/base.rb:121:in `process'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/abstract_controller/rendering.rb:45:in `process'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal.rb:203:in `dispatch'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal.rb:246:in `block in action'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/routing/route_set.rb:67:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/routing/route_set.rb:67:in `dispatch'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/routing/route_set.rb:30:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/journey-1.0.3/lib/journey/router.rb:68:in `block in call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/journey-1.0.3/lib/journey/router.rb:56:in `each'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/journey-1.0.3/lib/journey/router.rb:56:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/routing/route_set.rb:594:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/etag.rb:23:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/conditionalget.rb:25:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/head.rb:14:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/flash.rb:242:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/session/abstract/id.rb:205:in `context'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/session/abstract/id.rb:200:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/cookies.rb:338:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activerecord-3.2.2/lib/active_record/query_cache.rb:64:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activerecord-3.2.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:443:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/callbacks.rb:405:in `_run__595849329__call__736714758__callbacks'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/callbacks.rb:405:in `__run_callback'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/callbacks.rb:81:in `run_callbacks'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/railties-3.2.2/lib/rails/rack/logger.rb:26:in `call_app'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/railties-3.2.2/lib/rails/rack/logger.rb:16:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/rails-clean-logs-1.1/lib/rails-clean-logs.rb:15:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/methodoverride.rb:21:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/runtime.rb:17:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/activesupport-3.2.2/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/lock.rb:15:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/static.rb:61:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/railties-3.2.2/lib/rails/engine.rb:479:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/railties-3.2.2/lib/rails/application.rb:220:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/content_length.rb:14:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/railties-3.2.2/lib/rails/rack/log_tailer.rb:14:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/thin-1.6.1/lib/thin/connection.rb:82:in `block in pre_process'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/thin-1.6.1/lib/thin/connection.rb:80:in `catch'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/thin-1.6.1/lib/thin/connection.rb:80:in `pre_process'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/thin-1.6.1/lib/thin/connection.rb:55:in `process'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/thin-1.6.1/lib/thin/connection.rb:41:in `receive_data'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/eventmachine-1.0.3-x86-mingw32/lib/eventmachine.rb:187:in `run_machine'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/eventmachine-1.0.3-x86-mingw32/lib/eventmachine.rb:187:in `run'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/thin-1.6.1/lib/thin/backends/base.rb:73:in `start'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/thin-1.6.1/lib/thin/server.rb:162:in `start'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/handler/thin.rb:13:in `run'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/rack-1.4.1/lib/rack/server.rb:265:in `start'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/railties-3.2.2/lib/rails/commands/server.rb:70:in `start'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/railties-3.2.2/lib/rails/commands.rb:55:in `block in <top (required)>'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/railties-3.2.2/lib/rails/commands.rb:50:in `tap'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/railties-3.2.2/lib/rails/commands.rb:50:in `<top (required)>'
+script/rails:6:in `require'
+script/rails:6:in `<main>'
+  Rendered accounts/_form_edit.html.erb (3.0ms)
+  Rendered accounts/edit.html.erb within layouts/application (7.0ms)
+Completed 500 Internal Server Error in 20ms
+
+ActionView::Template::Error (D:/Users/itako/Desktop/system/app/views/accounts/_form_edit.html.erb:17: syntax error, unexpected ':', expecting ')'
+...dent_id, :style=>"width:40px" :class=>"disabled" );@output_b...
+...                               ^):
+    14:   <div class="control-group">
+    15:     <%= f.label :学籍番号,{:class => "control-label"} %>
+    16:     <div class="controls">
+    17:         <%= f.text_field :student_id, :style=>"width:40px" :class=>"disabled" %>
+    18:         <p class="help-block">※必須 5文字の半角数字</p>
+    19:     </div>
+    20:   </div>
+  app/views/accounts/edit.html.erb:9:in `_app_views_accounts_edit_html_erb___177705464_32552412'
+
+
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (71.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (150.0ms)
+
+
+Started GET "/accounts/4/edit" for 127.0.0.1 at 2013-12-23 23:12:32 +0900
+Processing by AccountsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", "4"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", "4"]]
+  Rendered accounts/_form_edit.html.erb (44.0ms)
+  Rendered accounts/edit.html.erb within layouts/application (47.0ms)
+Completed 200 OK in 78ms (Views: 74.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/accounts/4/edit" for 127.0.0.1 at 2013-12-23 23:13:29 +0900
+Processing by AccountsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAccount Load (1.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", "4"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", "4"]]
+  Rendered accounts/_form_edit.html.erb (28.0ms)
+  Rendered accounts/edit.html.erb within layouts/application (33.0ms)
+Completed 200 OK in 64ms (Views: 56.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/accounts/4/edit" for 127.0.0.1 at 2013-12-23 23:13:41 +0900
+Processing by AccountsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", "4"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", "4"]]
+  Rendered accounts/_form_edit.html.erb (10.0ms)
+  Rendered accounts/edit.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 43ms (Views: 40.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/4/edit" for 127.0.0.1 at 2013-12-23 23:14:04 +0900
+Processing by AccountsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", "4"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", "4"]]
+  Rendered accounts/_form_edit.html.erb (13.0ms)
+  Rendered accounts/edit.html.erb within layouts/application (29.0ms)
+Completed 200 OK in 57ms (Views: 54.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/4/edit" for 127.0.0.1 at 2013-12-23 23:15:18 +0900
+Processing by AccountsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", "4"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", "4"]]
+  Rendered accounts/_form_edit.html.erb (10.0ms)
+  Rendered accounts/edit.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 43ms (Views: 39.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/accounts/4/edit" for 127.0.0.1 at 2013-12-23 23:15:42 +0900
+Processing by AccountsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAccount Load (1.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", "4"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", "4"]]
+  Rendered accounts/_form_edit.html.erb (12.0ms)
+  Rendered accounts/edit.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 75ms (Views: 71.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/login/logout" for 127.0.0.1 at 2013-12-23 23:15:57 +0900
+Processing by LoginController#logout as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 24ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-23 23:15:58 +0900
+Processing by TopController#index as HTML
+  Rendered top/index.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 69ms (Views: 68.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2013-12-23 23:16:04 +0900
+Processing by AccountsController#new as HTML
+  Rendered accounts/_form.html.erb (8.0ms)
+  Rendered accounts/new.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 37ms (Views: 36.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2013-12-23 23:16:19 +0900
+Processing by LoginController#index as HTML
+  Rendered login/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 28ms (Views: 27.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-24 15:05:02 +0900
+Processing by TopController#index as HTML
+  Rendered top/index.html.erb within layouts/application (260.0ms)
+Completed 200 OK in 1334ms (Views: 1148.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/emps" for 127.0.0.1 at 2013-12-24 15:05:19 +0900
+Processing by EmpsController#index as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :check_logined rendered or redirected
+Completed 302 Found in 15ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2013-12-24 15:05:19 +0900
+Processing by LoginController#index as HTML
+  Rendered login/index.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 73ms (Views: 52.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login/auth" for 127.0.0.1 at 2013-12-24 15:05:27 +0900
+Processing by LoginController#auth as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f5R2dMqAcWOOm5WeyEuhD73vbwwJa+HRxfh33LSdJdY=", "student"=>"09411", "password"=>"[FILTERED]", "referer"=>"/emps", "commit"=>"ログイン"}
+  [1m[35mAccount Load (17.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."student_id" = '09411' AND "accounts"."password" = '31f30ddbcb1bf8446576f0e64aa4c88a9f055e3c' LIMIT 1
+  Rendered login/index.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 510ms (Views: 78.0ms | ActiveRecord: 52.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2013-12-24 15:05:42 +0900
+Processing by AccountsController#new as HTML
+  Rendered accounts/_form.html.erb (129.0ms)
+  Rendered accounts/new.html.erb within layouts/application (178.0ms)
+Completed 200 OK in 278ms (Views: 218.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2013-12-24 15:05:54 +0900
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f5R2dMqAcWOOm5WeyEuhD73vbwwJa+HRxfh33LSdJdY=", "account"=>{"student_id"=>"00003", "name"=>"a", "major"=>"4", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録"}
+  [1m[36m (17.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mAccount Exists (1.0ms)[0m  SELECT 1 FROM "accounts" WHERE "accounts"."student_id" = '00003' LIMIT 1
+Binary data inserted for `string` type on column `password`
+  [1m[36mSQL (89.0ms)[0m  [1mINSERT INTO "accounts" ("admin", "created_at", "major", "name", "password", "student_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["admin", nil], ["created_at", Tue, 24 Dec 2013 06:05:54 UTC +00:00], ["major", 4], ["name", "a"], ["password", "31f30ddbcb1bf8446576f0e64aa4c88a9f055e3c"], ["student_id", "00003"], ["updated_at", Tue, 24 Dec 2013 06:05:54 UTC +00:00]]
+  [1m[35m (8.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/accounts/21
+Completed 302 Found in 293ms (ActiveRecord: 115.0ms)
+
+
+Started GET "/accounts/21" for 127.0.0.1 at 2013-12-24 15:05:54 +0900
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mAccount Load (1.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", "21"]]
+  Rendered accounts/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 115ms (Views: 98.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2013-12-24 15:05:58 +0900
+Processing by LoginController#index as HTML
+  Rendered login/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 24ms (Views: 24.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login/auth" for 127.0.0.1 at 2013-12-24 15:06:04 +0900
+Processing by LoginController#auth as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f5R2dMqAcWOOm5WeyEuhD73vbwwJa+HRxfh33LSdJdY=", "student"=>"00003", "password"=>"[FILTERED]", "referer"=>"", "commit"=>"ログイン"}
+  [1m[35mAccount Load (22.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."student_id" = '00003' AND "accounts"."password" = '31f30ddbcb1bf8446576f0e64aa4c88a9f055e3c' LIMIT 1
+Redirected to http://localhost:3000
+Completed 302 Found in 24ms (ActiveRecord: 22.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-24 15:06:04 +0900
+Processing by TopController#index as HTML
+  Rendered top/index.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 45ms (Views: 45.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/emps" for 127.0.0.1 at 2013-12-24 15:06:25 +0900
+Processing by EmpsController#index as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 21]]
+  Rendered search/_form_emp_simple.html.erb (2.0ms)
+  [1m[35mEmp Load (16.0ms)[0m  SELECT "emps".* FROM "emps" ORDER BY created_at DESC LIMIT 10 OFFSET 0
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (1.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 35
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (1.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 34
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (1.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 33
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 32
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 31
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 1 LIMIT 1[0m
+  [1m[35mEmpSelection Load (1.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 29
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 1 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 28
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 1 LIMIT 1[0m
+  [1m[35mEmpSelection Load (1.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 27
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 1 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 26
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 1 LIMIT 1[0m
+  [1m[35mEmpSelection Load (1.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 25
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "emps" [0m
+  Rendered emps/_index_table.html.erb (403.0ms)
+  Rendered emps/index.html.erb within layouts/application (426.0ms)
+Completed 200 OK in 462ms (Views: 435.0ms | ActiveRecord: 24.0ms)
+
+
+Started GET "/emps" for 127.0.0.1 at 2013-12-24 15:06:29 +0900
+Processing by EmpsController#index as HTML
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 21]]
+  Rendered search/_form_emp_simple.html.erb (2.0ms)
+  [1m[36mEmp Load (1.0ms)[0m  [1mSELECT "emps".* FROM "emps" ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mEmpSelection Load (0.0ms)[0m  [1mSELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 35[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mEmpSelection Load (1.0ms)[0m  [1mSELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 34[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mEmpSelection Load (1.0ms)[0m  [1mSELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 33[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mEmpSelection Load (0.0ms)[0m  [1mSELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 32[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mEmpSelection Load (0.0ms)[0m  [1mSELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 31[0m
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 1 LIMIT 1
+  [1m[36mEmpSelection Load (1.0ms)[0m  [1mSELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 29[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 1 LIMIT 1
+  [1m[36mEmpSelection Load (0.0ms)[0m  [1mSELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 28[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 1 LIMIT 1
+  [1m[36mEmpSelection Load (0.0ms)[0m  [1mSELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 27[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 1 LIMIT 1
+  [1m[36mEmpSelection Load (0.0ms)[0m  [1mSELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 26[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 1 LIMIT 1
+  [1m[36mEmpSelection Load (0.0ms)[0m  [1mSELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 25[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "emps" 
+  Rendered emps/_index_table.html.erb (57.0ms)
+  Rendered emps/index.html.erb within layouts/application (64.0ms)
+Completed 200 OK in 105ms (Views: 96.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/emps/new" for 127.0.0.1 at 2013-12-24 15:06:36 +0900
+Processing by EmpsController#new as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  Rendered emps/_form.html.erb (168.0ms)
+  Rendered emps/new.html.erb within layouts/application (194.0ms)
+Completed 200 OK in 397ms (Views: 230.0ms | ActiveRecord: 18.0ms)
+
+
+Started POST "/emps" for 127.0.0.1 at 2013-12-24 15:06:48 +0900
+Processing by EmpsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f5R2dMqAcWOOm5WeyEuhD73vbwwJa+HRxfh33LSdJdY=", "emp"=>{"name"=>"長野高専", "location"=>"長野市徳間716", "glouping"=>"true", "submit(1i)"=>"2013", "submit(2i)"=>"12", "submit(3i)"=>"24", "entrysheet"=>""}, "emp_submission"=>{"graduate"=>"0", "result"=>"0", "resume"=>"0", "recommendation"=>"0", "medical"=>"0", "other"=>""}, "emp_briefing"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"24", "location"=>"", "details"=>""}, "emp_webtest"=>{"day(1i)"=>"2013", "day(2i)"=>"12", "day(3i)"=>"24", "location"=>"", "details"=>""}, "commit"=>"次へ"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 21]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (33.0ms)[0m  [1mINSERT INTO "emps" ("account_id", "advice", "created_at", "entrysheet", "glouping", "gmaps", "impression", "latitude", "location", "longitude", "name", "submit", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["account_id", 21], ["advice", nil], ["created_at", Tue, 24 Dec 2013 06:06:50 UTC +00:00], ["entrysheet", ""], ["glouping", true], ["gmaps", true], ["impression", nil], ["latitude", 36.6781632], ["location", "長野市徳間716"], ["longitude", 138.2337802], ["name", "長野高専"], ["submit", Tue, 24 Dec 2013], ["updated_at", Tue, 24 Dec 2013 06:06:50 UTC +00:00]]
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "emp_briefings" ("created_at", "day", "details", "emp_id", "location", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Tue, 24 Dec 2013 06:06:50 UTC +00:00], ["day", Tue, 24 Dec 2013], ["details", ""], ["emp_id", 36], ["location", ""], ["updated_at", Tue, 24 Dec 2013 06:06:50 UTC +00:00]]
+  [1m[36mSQL (23.0ms)[0m  [1mINSERT INTO "emp_submissions" ("created_at", "emp_id", "graduate", "medical", "other", "recommendation", "result", "resume", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 24 Dec 2013 06:06:50 UTC +00:00], ["emp_id", 36], ["graduate", false], ["medical", false], ["other", ""], ["recommendation", false], ["result", false], ["resume", false], ["updated_at", Tue, 24 Dec 2013 06:06:50 UTC +00:00]]
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "emp_webtests" ("created_at", "day", "details", "emp_id", "location", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Tue, 24 Dec 2013 06:06:50 UTC +00:00], ["day", Tue, 24 Dec 2013], ["details", ""], ["emp_id", 36], ["location", ""], ["updated_at", Tue, 24 Dec 2013 06:06:50 UTC +00:00]]
+  [1m[36m (25.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/emps/36/emp_selections/new
+Completed 302 Found in 1783ms (ActiveRecord: 83.0ms)
+
+
+Started GET "/emps/36/emp_selections/new" for 127.0.0.1 at 2013-12-24 15:06:50 +0900
+Processing by EmpSelectionsController#new as HTML
+  Parameters: {"emp_id"=>"36"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 21]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  Rendered emp_selections/_form.html.erb (99.0ms)
+  Rendered emp_selections/new.html.erb within layouts/application (103.0ms)
+Completed 200 OK in 383ms (Views: 175.0ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/emps/36/emp_selections" for 127.0.0.1 at 2013-12-24 15:06:55 +0900
+Processing by EmpSelectionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f5R2dMqAcWOOm5WeyEuhD73vbwwJa+HRxfh33LSdJdY=", "emp_selection"=>{"glouping"=>"1", "location"=>"", "start(1i)"=>"2013", "start(2i)"=>"12", "start(3i)"=>"24", "end(1i)"=>"2013", "end(2i)"=>"12", "end(3i)"=>"24", "result_date(1i)"=>"2013", "result_date(2i)"=>"12", "result_date(3i)"=>"24", "result"=>"true"}, "emp_test"=>{"kind"=>"", "details"=>""}, "emp_essay"=>{"time"=>"", "details"=>""}, "emp_interview"=>{"candidates"=>"", "examiners"=>"", "time"=>"", "details"=>""}, "commit"=>"次へ", "emp_id"=>"36"}
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mEmp Load (1.0ms)[0m  SELECT "emps".* FROM "emps" WHERE "emps"."id" = ? LIMIT 1  [["id", "36"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "emp_selections" ("created_at", "emp_id", "end", "glouping", "location", "result", "result_date", "start", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Tue, 24 Dec 2013 06:06:55 UTC +00:00], ["emp_id", 36], ["end", Tue, 24 Dec 2013], ["glouping", 1], ["location", ""], ["result", true], ["result_date", Tue, 24 Dec 2013], ["start", Tue, 24 Dec 2013], ["updated_at", Tue, 24 Dec 2013 06:06:55 UTC +00:00]]
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "emp_interviews" ("candidates", "created_at", "details", "emp_selection_id", "examiners", "time", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["candidates", nil], ["created_at", Tue, 24 Dec 2013 06:06:55 UTC +00:00], ["details", ""], ["emp_selection_id", 27], ["examiners", nil], ["time", nil], ["updated_at", Tue, 24 Dec 2013 06:06:55 UTC +00:00]]
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "emp_essays" ("created_at", "details", "emp_selection_id", "time", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Tue, 24 Dec 2013 06:06:55 UTC +00:00], ["details", ""], ["emp_selection_id", 27], ["time", nil], ["updated_at", Tue, 24 Dec 2013 06:06:55 UTC +00:00]]
+  [1m[36mSQL (21.0ms)[0m  [1mINSERT INTO "emp_tests" ("created_at", "details", "emp_selection_id", "kind", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Tue, 24 Dec 2013 06:06:55 UTC +00:00], ["details", ""], ["emp_selection_id", 27], ["kind", nil], ["updated_at", Tue, 24 Dec 2013 06:06:55 UTC +00:00]]
+  [1m[35m (7.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/emps/36/emp_selections/new_index
+Completed 302 Found in 70ms (ActiveRecord: 33.0ms)
+
+
+Started GET "/emps/36/emp_selections/new_index" for 127.0.0.1 at 2013-12-24 15:06:55 +0900
+Processing by EmpSelectionsController#new_index as HTML
+  Parameters: {"emp_id"=>"36"}
+  [1m[36mAccount Load (1.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35mEmp Load (0.0ms)[0m  SELECT "emps".* FROM "emps" WHERE "emps"."id" = ? LIMIT 1  [["id", "36"]]
+  [1m[36mEmpSelection Load (0.0ms)[0m  [1mSELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 36[0m
+  Rendered emp_selections/_index_table.html.erb (6.0ms)
+  Rendered emp_selections/new_index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 37ms (Views: 34.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/emps/36/edit_impression" for 127.0.0.1 at 2013-12-24 15:06:59 +0900
+Processing by EmpsController#edit_impression as HTML
+  Parameters: {"id"=>"36"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 21]]
+  [1m[36mEmp Load (0.0ms)[0m  [1mSELECT "emps".* FROM "emps" WHERE "emps"."id" = ? LIMIT 1[0m  [["id", "36"]]
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 21 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "emps".* FROM "emps" WHERE "emps"."id" = ? LIMIT 1[0m  [["id", "36"]]
+  Rendered emps/_form_impression.html.erb (5.0ms)
+  Rendered emps/edit_impression.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 54ms (Views: 47.0ms | ActiveRecord: 0.0ms)
+
+
+Started PUT "/emps/36/update_impression" for 127.0.0.1 at 2013-12-24 15:07:02 +0900
+Processing by EmpsController#update_impression as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f5R2dMqAcWOOm5WeyEuhD73vbwwJa+HRxfh33LSdJdY=", "emp"=>{"impression"=>"", "advice"=>""}, "commit"=>"登録", "id"=>"36"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 21]]
+  [1m[36mEmp Load (1.0ms)[0m  [1mSELECT "emps".* FROM "emps" WHERE "emps"."id" = ? LIMIT 1[0m  [["id", "36"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mUPDATE "emps" SET "impression" = '', "advice" = '', "updated_at" = '2013-12-24 06:07:02.971123' WHERE "emps"."id" = 36[0m
+  [1m[35m (9.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/emps/36
+Completed 302 Found in 21ms (ActiveRecord: 11.0ms)
+
+
+Started GET "/emps/36" for 127.0.0.1 at 2013-12-24 15:07:03 +0900
+Processing by EmpsController#show as HTML
+  Parameters: {"id"=>"36"}
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35mEmp Load (0.0ms)[0m  SELECT "emps".* FROM "emps" WHERE "emps"."id" = ? LIMIT 1  [["id", "36"]]
+  [1m[36mEmpSelection Load (1.0ms)[0m  [1mSELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 36[0m
+  [1m[35mEmpTest Load (0.0ms)[0m  SELECT "emp_tests".* FROM "emp_tests" WHERE "emp_tests"."emp_selection_id" = 27 LIMIT 1
+  [1m[36mEmpInterview Load (1.0ms)[0m  [1mSELECT "emp_interviews".* FROM "emp_interviews" WHERE "emp_interviews"."emp_selection_id" = 27 LIMIT 1[0m
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 21 LIMIT 1
+  [1m[36mEmpSubmission Load (1.0ms)[0m  [1mSELECT "emp_submissions".* FROM "emp_submissions" WHERE "emp_submissions"."emp_id" = 36 LIMIT 1[0m
+  [1m[35mEmpBriefing Load (0.0ms)[0m  SELECT "emp_briefings".* FROM "emp_briefings" WHERE "emp_briefings"."emp_id" = 36 LIMIT 1
+  [1m[36mEmpWebtest Load (0.0ms)[0m  [1mSELECT "emp_webtests".* FROM "emp_webtests" WHERE "emp_webtests"."emp_id" = 36 LIMIT 1[0m
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/gmaps4rails-1.5.6/app/views/gmaps4rails/_gmaps4rails.html.erb (33.0ms)
+  Rendered emps/show.html.erb within layouts/application (821.0ms)
+Completed 200 OK in 915ms (Views: 872.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-26 16:08:13 +0900
+Processing by TopController#index as HTML
+Filter chain halted as #<Proc:0x4550400@C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/http_authentication.rb:112> rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-26 16:08:21 +0900
+Processing by TopController#index as HTML
+  Rendered top/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 777ms (Views: 776.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2013-12-26 16:08:51 +0900
+Processing by LoginController#index as HTML
+  Rendered login/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 28ms (Views: 27.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login/auth" for 127.0.0.1 at 2013-12-26 16:08:57 +0900
+Processing by LoginController#auth as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WzwnutmPqC+FryrHEcI9dk5Wi7GORT/q8YPBuoDJKWY=", "student"=>"09411", "password"=>"[FILTERED]", "referer"=>"", "commit"=>"ログイン"}
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."student_id" = '09411' AND "accounts"."password" = '31f30ddbcb1bf8446576f0e64aa4c88a9f055e3c' LIMIT 1[0m
+  Rendered login/index.html.erb within layouts/application (30.0ms)
+Completed 200 OK in 326ms (Views: 53.0ms | ActiveRecord: 9.0ms)
+
+
+Started POST "/login/auth" for 127.0.0.1 at 2013-12-26 16:09:05 +0900
+Processing by LoginController#auth as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WzwnutmPqC+FryrHEcI9dk5Wi7GORT/q8YPBuoDJKWY=", "student"=>"09411", "password"=>"[FILTERED]", "referer"=>"", "commit"=>"ログイン"}
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."student_id" = '09411' AND "accounts"."password" = '31f30ddbcb1bf8446576f0e64aa4c88a9f055e3c' LIMIT 1
+  Rendered login/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 26ms (Views: 24.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2013-12-26 16:09:24 +0900
+Processing by AccountsController#new as HTML
+  Rendered accounts/_form.html.erb (176.0ms)
+  Rendered accounts/new.html.erb within layouts/application (276.0ms)
+Completed 200 OK in 357ms (Views: 341.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2013-12-26 16:09:41 +0900
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WzwnutmPqC+FryrHEcI9dk5Wi7GORT/q8YPBuoDJKWY=", "account"=>{"student_id"=>"09411", "name"=>"あ", "major"=>"4", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mAccount Exists (0.0ms)[0m  SELECT 1 FROM "accounts" WHERE "accounts"."student_id" = '09411' LIMIT 1
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  Rendered accounts/_form.html.erb (35.0ms)
+  Rendered accounts/new.html.erb within layouts/application (38.0ms)
+Completed 200 OK in 227ms (Views: 62.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2013-12-26 16:09:52 +0900
+Processing by LoginController#index as HTML
+  Rendered login/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 26ms (Views: 24.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login/auth" for 127.0.0.1 at 2013-12-26 16:09:58 +0900
+Processing by LoginController#auth as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WzwnutmPqC+FryrHEcI9dk5Wi7GORT/q8YPBuoDJKWY=", "student"=>"09411", "password"=>"[FILTERED]", "referer"=>"", "commit"=>"ログイン"}
+  [1m[35mAccount Load (1.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."student_id" = '09411' AND "accounts"."password" = 'da39a3ee5e6b4b0d3255bfef95601890afd80709' LIMIT 1
+Redirected to http://localhost:3000
+Completed 302 Found in 3ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-26 16:09:58 +0900
+Processing by TopController#index as HTML
+  Rendered top/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 25ms (Views: 24.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/mypage" for 127.0.0.1 at 2013-12-26 16:10:05 +0900
+Processing by AccountsController#mypage as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "emps" WHERE (account_id == 4) LIMIT 20 OFFSET 0) subquery_for_count [0m
+  [1m[35mEmp Load (0.0ms)[0m  SELECT "emps".* FROM "emps" WHERE (account_id == 4) ORDER BY created_at DESC LIMIT 20 OFFSET 0
+  [1m[36mAccount Load (1.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (1.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 35
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 34
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 33
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 32
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (1.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 31
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "emps" WHERE (account_id == 4)[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "unis" WHERE (account_id == 4) LIMIT 20 OFFSET 0) subquery_for_count 
+  [1m[36mUni Load (2.0ms)[0m  [1mSELECT "unis".* FROM "unis" WHERE (account_id == 4) ORDER BY created_at DESC LIMIT 20 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "unis" WHERE (account_id == 4)
+  Rendered accounts/mypage.html.erb within layouts/application (555.0ms)
+Completed 200 OK in 784ms (Views: 642.0ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/emps" for 127.0.0.1 at 2013-12-26 16:24:45 +0900
+Processing by EmpsController#index as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered search/_form_emp_simple.html.erb (4.0ms)
+  [1m[35mEmp Load (19.0ms)[0m  SELECT "emps".* FROM "emps" ORDER BY created_at DESC LIMIT 10 OFFSET 0
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 21 LIMIT 1[0m
+  [1m[35mEmpSelection Load (1.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 36
+  [1m[36mAccount Load (2.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 35
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 34
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 33
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 32
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mEmpSelection Load (0.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 31
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 1 LIMIT 1[0m
+  [1m[35mEmpSelection Load (1.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 29
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 1 LIMIT 1[0m
+  [1m[35mEmpSelection Load (1.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 28
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 1 LIMIT 1[0m
+  [1m[35mEmpSelection Load (1.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 27
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 1 LIMIT 1[0m
+  [1m[35mEmpSelection Load (1.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 26
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "emps" [0m
+  Rendered emps/_index_table.html.erb (76.0ms)
+  Rendered emps/index.html.erb within layouts/application (145.0ms)
+Completed 200 OK in 221ms (Views: 192.0ms | ActiveRecord: 26.0ms)
+
+
+Started GET "/emps/36" for 127.0.0.1 at 2013-12-26 16:25:15 +0900
+Processing by EmpsController#show as HTML
+  Parameters: {"id"=>"36"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mEmp Load (1.0ms)[0m  [1mSELECT "emps".* FROM "emps" WHERE "emps"."id" = ? LIMIT 1[0m  [["id", "36"]]
+  [1m[35mEmpSelection Load (1.0ms)[0m  SELECT "emp_selections".* FROM "emp_selections" WHERE "emp_selections"."emp_id" = 36
+  [1m[36mEmpTest Load (0.0ms)[0m  [1mSELECT "emp_tests".* FROM "emp_tests" WHERE "emp_tests"."emp_selection_id" = 27 LIMIT 1[0m
+  [1m[35mEmpInterview Load (0.0ms)[0m  SELECT "emp_interviews".* FROM "emp_interviews" WHERE "emp_interviews"."emp_selection_id" = 27 LIMIT 1
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 21 LIMIT 1[0m
+  [1m[35mEmpSubmission Load (1.0ms)[0m  SELECT "emp_submissions".* FROM "emp_submissions" WHERE "emp_submissions"."emp_id" = 36 LIMIT 1
+  [1m[36mEmpBriefing Load (1.0ms)[0m  [1mSELECT "emp_briefings".* FROM "emp_briefings" WHERE "emp_briefings"."emp_id" = 36 LIMIT 1[0m
+  [1m[35mEmpWebtest Load (0.0ms)[0m  SELECT "emp_webtests".* FROM "emp_webtests" WHERE "emp_webtests"."emp_id" = 36 LIMIT 1
+  Rendered C:/Ruby193/lib/ruby/gems/1.9.1/gems/gmaps4rails-1.5.6/app/views/gmaps4rails/_gmaps4rails.html.erb (3.0ms)
+  Rendered emps/show.html.erb within layouts/application (620.0ms)
+Completed 200 OK in 1015ms (Views: 653.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-09 12:59:12 +0900
+Processing by TopController#index as HTML
+Filter chain halted as #<Proc:0x4527e40@C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/http_authentication.rb:112> rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-09 12:59:40 +0900
+Processing by TopController#index as HTML
+  Rendered top/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 1027ms (Views: 1025.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2014-01-09 12:59:50 +0900
+Processing by AccountsController#new as HTML
+  Rendered accounts/_form.html.erb (128.0ms)
+  Rendered accounts/new.html.erb within layouts/application (251.0ms)
+Completed 200 OK in 321ms (Views: 314.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUniApps (20120524070020)
+Migrating to CreateUniResults (20120524070048)
+Migrating to CreateUniExams (20120524070116)
+Migrating to CreateUniInterviews (20120524070344)
+Migrating to CreateEmpInterviews (20120524070441)
+Migrating to CreateEmpEssays (20120524070538)
+Migrating to CreateEmpBriefings (20120524070637)
+Migrating to CreateEmpWebtests (20120524070703)
+Migrating to CreateEmpSelections (20120524070729)
+Migrating to CreateAccounts (20120806060349)
+Migrating to CreateEmpSubmissions (20120806061000)
+Migrating to CreateEmpTests (20120824064615)
+Migrating to CreateUniSubmissions (20120824082808)
+Migrating to CreateUniSubjects (20120824091045)
+Migrating to CreateUnis (20121011060701)
+Migrating to CreateEmps (20121011060829)
+Migrating to AddLatitudeLongitudeGmapsToUni (20130529043500)
+Migrating to CreateDraws (20131112001156)
+Migrating to AddLatitudeLongitudeGmapsToEmps (20131219015530)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("accounts")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("draws")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("emp_briefings")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_emp_briefings_on_emp_id')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("emp_essays")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_emp_essays_on_emp_selection_id')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("emp_interviews")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_emp_interviews_on_emp_selection_id')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("emp_selections")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_emp_selections_on_emp_id')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("emp_submissions")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_emp_submissions_on_emp_id')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("emp_tests")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_emp_tests_on_emp_selection_id')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("emp_webtests")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_emp_webtests_on_emp_id')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("emps")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_emps_on_account_id')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("uni_apps")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_uni_apps_on_uni_id')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("uni_exams")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_uni_exams_on_uni_id')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("uni_interviews")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_uni_interviews_on_uni_id')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("uni_results")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_uni_results_on_uni_id')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("uni_subjects")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_uni_subjects_on_uni_id')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("uni_submissions")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_uni_submissions_on_uni_id')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("unis")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_unis_on_account_id')[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-15 14:37:34 +0900
+Processing by TopController#index as HTML
+Filter chain halted as #<Proc:0x42b4498@C:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.2/lib/action_controller/metal/http_authentication.rb:112> rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-15 14:37:41 +0900
+Processing by TopController#index as HTML
+  Rendered top/index.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 4497ms (Views: 4496.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2014-01-15 14:37:51 +0900
+Processing by LoginController#index as HTML
+  Rendered login/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login/auth" for 127.0.0.1 at 2014-01-15 14:37:56 +0900
+Processing by LoginController#auth as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uH4EXWPUwuabfrsQgXEhqlkWQzpS3TDkLpFSbElD1hg=", "student"=>"09411", "password"=>"[FILTERED]", "referer"=>"", "commit"=>"ログイン"}
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."student_id" = '09411' AND "accounts"."password" = '31f30ddbcb1bf8446576f0e64aa4c88a9f055e3c' LIMIT 1[0m
+  Rendered login/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 1227ms (Views: 10.0ms | ActiveRecord: 7.0ms)
+
+
+Started POST "/login/auth" for 127.0.0.1 at 2014-01-15 14:39:18 +0900
+Processing by LoginController#auth as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uH4EXWPUwuabfrsQgXEhqlkWQzpS3TDkLpFSbElD1hg=", "student"=>"09411", "password"=>"[FILTERED]", "referer"=>"", "commit"=>"ログイン"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."student_id" = '09411' AND "accounts"."password" = '31f30ddbcb1bf8446576f0e64aa4c88a9f055e3c' LIMIT 1
+  Rendered login/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2014-01-15 14:39:21 +0900
+Processing by AccountsController#new as HTML
+  Rendered accounts/_form.html.erb (222.0ms)
+  Rendered accounts/new.html.erb within layouts/application (438.0ms)
+Completed 200 OK in 582ms (Views: 554.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2014-01-15 14:39:29 +0900
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uH4EXWPUwuabfrsQgXEhqlkWQzpS3TDkLpFSbElD1hg=", "account"=>{"student_id"=>"01000", "name"=>"a", "major"=>"1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mAccount Exists (0.0ms)[0m  SELECT 1 FROM "accounts" WHERE "accounts"."student_id" = '01000' LIMIT 1
+Binary data inserted for `string` type on column `password`
+  [1m[36mSQL (164.0ms)[0m  [1mINSERT INTO "accounts" ("admin", "created_at", "major", "name", "password", "student_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["admin", nil], ["created_at", Wed, 15 Jan 2014 05:39:30 UTC +00:00], ["major", 1], ["name", "a"], ["password", "31f30ddbcb1bf8446576f0e64aa4c88a9f055e3c"], ["student_id", "01000"], ["updated_at", Wed, 15 Jan 2014 05:39:30 UTC +00:00]]
+  [1m[35m (56.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/accounts/22
+Completed 302 Found in 640ms (ActiveRecord: 220.0ms)
+
+
+Started GET "/accounts/22" for 127.0.0.1 at 2014-01-15 14:39:30 +0900
+Processing by AccountsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mAccount Load (1.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", "22"]]
+  Rendered accounts/show.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 66ms (Views: 64.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2014-01-15 14:39:33 +0900
+Processing by LoginController#index as HTML
+  Rendered login/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 15ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login/auth" for 127.0.0.1 at 2014-01-15 14:39:42 +0900
+Processing by LoginController#auth as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uH4EXWPUwuabfrsQgXEhqlkWQzpS3TDkLpFSbElD1hg=", "student"=>"01000", "password"=>"[FILTERED]", "referer"=>"", "commit"=>"ログイン"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."student_id" = '01000' AND "accounts"."password" = '31f30ddbcb1bf8446576f0e64aa4c88a9f055e3c' LIMIT 1
+Redirected to http://localhost:3000
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-15 14:39:42 +0900
+Processing by TopController#index as HTML
+  Rendered top/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 33ms (Views: 32.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/unis" for 127.0.0.1 at 2014-01-15 14:39:48 +0900
+Processing by UnisController#index as HTML
+  [1m[36mAccount Load (1.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 22]]
+  Rendered search/_form_uni_simple.html.erb (3.0ms)
+  [1m[35mUni Load (3.0ms)[0m  SELECT "unis".* FROM "unis" ORDER BY created_at DESC LIMIT 10 OFFSET 0
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "unis" [0m
+  Rendered unis/_index_table.html.erb (359.0ms)
+  Rendered unis/index.html.erb within layouts/application (427.0ms)
+Completed 200 OK in 512ms (Views: 502.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/unis" for 127.0.0.1 at 2014-01-15 14:39:51 +0900
+Processing by UnisController#index as HTML
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 22]]
+  Rendered search/_form_uni_simple.html.erb (1.0ms)
+  [1m[36mUni Load (1.0ms)[0m  [1mSELECT "unis".* FROM "unis" ORDER BY created_at DESC LIMIT 10 OFFSET 0[0m
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "unis" 
+  Rendered unis/_index_table.html.erb (46.0ms)
+  Rendered unis/index.html.erb within layouts/application (50.0ms)
+Completed 200 OK in 61ms (Views: 58.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/unis/new" for 127.0.0.1 at 2014-01-15 14:39:57 +0900
+Processing by UnisController#new as HTML
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 22]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  Rendered unis/_form_uni.html.erb (286.0ms)
+  Rendered unis/new.html.erb within layouts/application (358.0ms)
+Completed 200 OK in 568ms (Views: 398.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/unis" for 127.0.0.1 at 2014-01-15 14:40:10 +0900
+Processing by UnisController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uH4EXWPUwuabfrsQgXEhqlkWQzpS3TDkLpFSbElD1hg=", "uni"=>{"name"=>"ほげ", "major"=>"ほげ", "location"=>"長野", "glouping"=>"true"}, "uni_exam"=>{"start(1i)"=>"2014", "start(2i)"=>"1", "start(3i)"=>"15", "end(1i)"=>"2014", "end(2i)"=>"1", "end(3i)"=>"15"}, "uni_app"=>{"start(1i)"=>"2014", "start(2i)"=>"1", "start(3i)"=>"15", "end(1i)"=>"2014", "end(2i)"=>"1", "end(3i)"=>"15"}, "uni_submission"=>{"result"=>"0", "survey"=>"0", "recommendation"=>"0", "reason"=>"0", "reason_details"=>"", "other"=>""}, "uni_result"=>{"day(1i)"=>"2014", "day(2i)"=>"1", "day(3i)"=>"15", "result"=>"true"}, "commit"=>"次へ"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 22]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 22]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "unis" ("account_id", "advice", "created_at", "glouping", "gmaps", "impression", "latitude", "location", "longitude", "major", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["account_id", 22], ["advice", nil], ["created_at", Wed, 15 Jan 2014 05:40:11 UTC +00:00], ["glouping", true], ["gmaps", true], ["impression", nil], ["latitude", 36.6485496], ["location", "長野"], ["longitude", 138.1942432], ["major", "ほげ"], ["name", "ほげ"], ["updated_at", Wed, 15 Jan 2014 05:40:11 UTC +00:00]]
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "uni_apps" ("created_at", "end", "start", "uni_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Wed, 15 Jan 2014 05:40:11 UTC +00:00], ["end", Wed, 15 Jan 2014], ["start", Wed, 15 Jan 2014], ["uni_id", 101], ["updated_at", Wed, 15 Jan 2014 05:40:11 UTC +00:00]]
+  [1m[36mSQL (171.0ms)[0m  [1mINSERT INTO "uni_results" ("created_at", "day", "result", "uni_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Wed, 15 Jan 2014 05:40:11 UTC +00:00], ["day", Wed, 15 Jan 2014], ["result", true], ["uni_id", 101], ["updated_at", Wed, 15 Jan 2014 05:40:11 UTC +00:00]]
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "uni_exams" ("created_at", "end", "start", "uni_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Wed, 15 Jan 2014 05:40:12 UTC +00:00], ["end", Wed, 15 Jan 2014], ["start", Wed, 15 Jan 2014], ["uni_id", 101], ["updated_at", Wed, 15 Jan 2014 05:40:12 UTC +00:00]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "uni_submissions" ("created_at", "other", "reason", "reason_details", "recommendation", "result", "survey", "uni_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 15 Jan 2014 05:40:12 UTC +00:00], ["other", ""], ["reason", false], ["reason_details", ""], ["recommendation", false], ["result", false], ["survey", false], ["uni_id", 101], ["updated_at", Wed, 15 Jan 2014 05:40:12 UTC +00:00]]
+  [1m[35m (1301.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/unis/101/uni_subjects/new_index
+Completed 302 Found in 3204ms (ActiveRecord: 1477.1ms)
+
+
+Started GET "/unis/101/uni_subjects/new_index" for 127.0.0.1 at 2014-01-15 14:40:14 +0900
+Processing by UniSubjectsController#new_index as HTML
+  Parameters: {"uni_id"=>"101"}
+  [1m[36mAccount Load (1.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 22]]
+  [1m[35mUni Load (0.0ms)[0m  SELECT "unis".* FROM "unis" WHERE "unis"."id" = ? LIMIT 1  [["id", "101"]]
+  [1m[36mUniSubject Load (0.0ms)[0m  [1mSELECT "uni_subjects".* FROM "uni_subjects" WHERE "uni_subjects"."uni_id" = 101[0m
+  Rendered uni_subjects/_index_table.html.erb (216.0ms)
+  Rendered uni_subjects/new_index.html.erb within layouts/application (317.0ms)
+Completed 200 OK in 620ms (Views: 618.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/unis/101/uni_interviews/new" for 127.0.0.1 at 2014-01-15 14:40:18 +0900
+Processing by UniInterviewsController#new as HTML
+  Parameters: {"uni_id"=>"101"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 22]]
+  Rendered uni_interviews/_form.html.erb (4.0ms)
+  Rendered uni_interviews/new.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 123ms (Views: 113.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/unis/101/uni_interviews" for 127.0.0.1 at 2014-01-15 14:40:21 +0900
+Processing by UniInterviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uH4EXWPUwuabfrsQgXEhqlkWQzpS3TDkLpFSbElD1hg=", "uni_interview"=>{"candidates"=>"", "examiners"=>"", "time"=>"", "deatails"=>""}, "commit"=>"次へ", "uni_id"=>"101"}
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 22]]
+  [1m[35mUni Load (0.0ms)[0m  SELECT "unis".* FROM "unis" WHERE "unis"."id" = ? LIMIT 1  [["id", "101"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "uni_interviews" ("candidates", "created_at", "deatails", "examiners", "time", "uni_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["candidates", nil], ["created_at", Wed, 15 Jan 2014 05:40:21 UTC +00:00], ["deatails", ""], ["examiners", nil], ["time", nil], ["uni_id", 101], ["updated_at", Wed, 15 Jan 2014 05:40:21 UTC +00:00]]
+  [1m[36m (98.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/unis/101/draws/new
+Completed 302 Found in 134ms (ActiveRecord: 99.0ms)
+
+
+Started GET "/unis/101/draws/new" for 127.0.0.1 at 2014-01-15 14:40:21 +0900
+Processing by DrawsController#new as HTML
+  Parameters: {"uni_id"=>"101"}
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 22]]
+  Rendered draws/_form.html.erb (5.0ms)
+  Rendered draws/new.html.erb within layouts/application (1513.1ms)
+Completed 200 OK in 1663ms (Views: 1655.1ms | ActiveRecord: 0.0ms)

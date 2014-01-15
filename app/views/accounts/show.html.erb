@@ -29,12 +29,12 @@
 			<% end %>
 		  </th>
 	  </table>
-	  <br />
+	  <hr>
 	  <% if !session[:usr] %>
-	    <%= link_to '編集', edit_account_path(@account), :class=>"btn"%> 
-	    <%= link_to 'ログインへ', '/login', :class=>"btn btn-primary" ,:type=>"submit" %>
+	    <%= link_to '編集 »', edit_account_path(@account), :class=>"btn"%> 
+	    <%= link_to 'ログイン »', '/login', :class=>"btn btn-primary" ,:type=>"submit" %>
 	  <% else %>
-	    <%= link_to 'マイページへ', mypage_accounts_path, :class=>"btn"%> 
+	    <%= link_to 'マイページ »', mypage_accounts_path, :class=>"btn"%> 
 	  <% end %>
 	</div>
   </div>

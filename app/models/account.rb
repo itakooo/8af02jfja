@@ -16,15 +16,14 @@ class Account < ActiveRecord::Base
 	validates :name,
 		:presence => { :message => 'は必須です' },
 		:length => { :maximum => 30, :minimum => 1, :allow_blank => true,
-                 :message => 'は文字数は30文字以下にしてください'}
+                :message => 'は文字数は30文字以下にしてください'}
 	validates :major,
 		:presence => true,
 		:numericality => { :allow_blank => true,
             :only_integer => true, :greater_than => 0, :less_than => 6}
 	validates :password,
-		:presence => true,
-    :confirmation => {:message => '入力が一致しません'}
-		#:length => { :maximum => 16, :minimum => 4}
+                :presence => true,
+                :confirmation => {:message => '入力が一致しません'}
 
   def self.authenticate(student,password)
     where(:student_id => student,
